@@ -1,14 +1,14 @@
-const cells = 31;
+// const cells = 31;
+const cells = 81;
 
-// From 0.001 to 100
 const items = [
   { name: "cs1.6", img: "images/game/cs1.6.png", chance: 1 },
   { name: "left-4-dead-2", img: "images/game/left-4-dead-2.jpeg", chance: 2 },
   { name: "day-of-defeat", img: "images/game/day-of-defeat.png", chance: 3 },
   { name: "fortnite", img: "images/game/fortnite.jpeg", chance: 4 },
   { name: "dayz", img: "images/game/dayz.png", chance: 5 },
-  { name: "gta5", img: "images/game/gta5.png", chance: 7 },
-  { name: "phasmophobia", img: "images/game/phasmophobia.png", chance: 20 },
+  { name: "gta5", img: "images/game/gta5.png", chance: 11 },
+  { name: "phasmophobia", img: "images/game/phasmophobia.png", chance: 13 },
   { name: "pubg", img: "images/game/pubg.png", chance: 24 },
   { name: "cs2", img: "images/game/cs2.png", chance: 29 },
 ];
@@ -61,6 +61,7 @@ function start() {
     isStarted = true;
   }
   const audio = new Audio("sound.mp3");
+  // audio.volume = 0.5;
   audio.play();
   generateItems();
   const list = document.querySelector(".list");
@@ -70,7 +71,8 @@ function start() {
     list.style.transform = "translate3d(-50%, 0, 0)";
   }, 0);
 
-  const item = list.querySelectorAll("li")[15];
+  //   const item = list.querySelectorAll("li")[15];
+  const item = list.querySelectorAll("li")[40];
 
   list.addEventListener("transitionend", () => {
     isStarted = false;
