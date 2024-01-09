@@ -60,6 +60,8 @@ function start() {
   } else {
     isStarted = true;
   }
+  const audio = new Audio("sound.mp3");
+  audio.play();
   generateItems();
   const list = document.querySelector(".list");
 
