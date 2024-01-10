@@ -1,3 +1,5 @@
+const startButton = document.querySelector(".start");
+
 // const cells = 31;
 const cells = 81;
 
@@ -81,6 +83,10 @@ function start() {
     console.log(data);
   });
 }
+
+startButton.addEventListener("click", () => {
+  start();
+});
 
 const downloadButton = document.querySelector(".download-button");
 // Установка
