@@ -102,6 +102,10 @@
   z-index: 4;
 }
 
+.popup-block {
+  display: none;
+}
+
 .popup__wrapper {
   margin: auto;
   width: 300px;
@@ -117,7 +121,7 @@
   font-size: 18px;
 }
 
-.popup__start-button {
+.popup__button {
   background-color: #1b1f24;
   color: white;
   border: none;
@@ -127,7 +131,7 @@
   transition: opacity 0.3s ease;
 }
 
-.popup__start-button:hover {
+.popup__button:hover {
   opacity: 0.9;
 }
 
@@ -168,6 +172,26 @@
 
 .popup-active {
   display: none;
+}
+
+.block-button {
+  opacity: 0;
+  position: absolute;
+  margin: 10% 0 0;
+  padding: 15px 30px;
+  color: aliceblue;
+  font-size: 21px;
+  left: 50%;
+  top: 100%;
+  transform: translate3d(-50%, 50px, 0);
+  background: red;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 3s ease;
+}
+
+.button-active {
+  opacity: 1;
 }
 /* modal */
 

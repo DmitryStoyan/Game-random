@@ -13,7 +13,7 @@
   </head>
 
   <body class="body">
-    <div class="popup">
+    <div class="popup popup-hello">
       <div class="popup__wrapper">
         <h3 class="popup__title">Йоу, бро!</h3>
         <p class="popup__subtitle">
@@ -24,7 +24,14 @@
           Маск. Как говорится, запомни сам, и передай своим, Димаста в деле -
           все вспотели!
         </p>
-        <button class="popup__start-button">Начать</button>
+        <button class="popup__button popup__start-button">Начать</button>
+      </div>
+    </div>
+
+    <div class="popup popup-block">
+      <div class="popup__wrapper">
+        <h3 class="popup__subtitle">Нихуя ты придумал!!!!</h3>
+        <button class="popup__button popup__block-button">лол</button>
       </div>
     </div>
     <div class="install-screen">
@@ -55,8 +62,10 @@
 
       <!-- <button class="start" onclick="start()">Крутить</button> -->
       <button class="start">Крутить</button>
+      <button class="block-button">Заблокировать акк своего бро</button>
     </div>
     <script type="module" src="./script.js"></script>
     <script type="module" src="./modal.js"></script>
+    <script type="module" src="./block.js"></script>
   </body>
 </html>
