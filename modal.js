@@ -1,8 +1,13 @@
-const buttonStart = document.querySelector(".popup__button");
+const buttonStart = document.querySelector(".popup__start-button");
 const popup = document.querySelector(".popup-hello");
 const buttonBlock = document.querySelector(".block-button");
 const popupBlockButton = document.querySelector(".popup__block-button");
 const popupBlock = document.querySelector(".popup-block");
+const popupPunishment = document.querySelector(".popup-punishment");
+const popupPunishmentButton = document.querySelector(
+  ".popup__punishment-button"
+);
+
 let prankMusic = new Audio("zvuki-orgazm.mp3");
 
 if (
@@ -18,19 +23,36 @@ buttonStart.addEventListener("click", () => {
   popup.classList.add("popup-active");
   setTimeout(() => {
     buttonBlock.classList.add("button-active");
-  }, 13000);
+  }, 17000);
 });
 
 popupBlockButton.addEventListener("click", () => {
-  alert(
-    "А теперь, в знак наказания, жди 10 сек пока эта хуйня закроектся!!! \nТам тебя еще один прикол ждет))"
-  );
+  popupBlock.classList.add("popup-block");
+  popupPunishment.classList.add("popup-punishment-active");
   setTimeout(() => {
-    popupBlock.classList.add("popup-block");
+    popupPunishment.classList.remove("popup-punishment-active");
     prankMusic.play();
-  }, 3000);
+  }, 20000);
 });
 
 buttonBlock.addEventListener("click", () => {
   popupBlock.classList.remove("popup-block");
+});
+
+const messageOnButton = [
+  "Я же говорю, она не работает, чел!!!",
+  "Фига ты настырный",
+  "Ты мне кнопку решил сломать???",
+  "Не выйдет бро",
+  "Ну все-все, хорош",
+  "Ща прикол будет))",
+];
+let messageCurrent = 0;
+
+popupPunishment.addEventListener("click", () => {
+  popupPunishmentButton.textContent = messageOnButton[messageCurrent];
+  messageCurrent += 1;
+  if (messageCurrent >= messageOnButton.length) {
+    messageCurrent = messageOnButton.length - 1;
+  }
 });

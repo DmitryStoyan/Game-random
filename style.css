@@ -131,10 +131,22 @@
   transition: opacity 0.3s ease;
 }
 
+.popup__punishment-button {
+  padding: 20px 20px;
+  font-size: 14px;
+}
+
 .popup__button:hover {
   opacity: 0.9;
 }
-
+.popup-punishment {
+  visibility: hidden;
+  opacity: 0;
+}
+.popup-punishment-active {
+  visibility: visible;
+  opacity: 1;
+}
 /* modal */
 .install-screen {
   /* height: 100vh;
