@@ -71,7 +71,7 @@
   transform: scale(1.05);
 }
 
-.start {
+.start-button {
   position: absolute;
   left: 50%;
   top: 100%;
@@ -87,67 +87,10 @@
   transition: opacity 0.2s ease;
 }
 
-.start:hover {
+.start-button:hover {
   opacity: 0.8;
 }
 
-.popup {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  top: 0;
-  left: 0;
-  z-index: 4;
-}
-
-.popup-block {
-  display: none;
-}
-
-.popup__wrapper {
-  margin: auto;
-  width: 300px;
-  padding: 20px;
-  background-color: #fff;
-  text-align: center;
-  color: black;
-  border-radius: 10px;
-}
-
-.popup__subtitle {
-  margin: 20px 0 30px 0;
-  font-size: 18px;
-}
-
-.popup__button {
-  background-color: #1b1f24;
-  color: white;
-  border: none;
-  padding: 20px 39%;
-  font-size: 18px;
-  font-weight: 100;
-  transition: opacity 0.3s ease;
-}
-
-.popup__punishment-button {
-  padding: 20px 20px;
-  font-size: 14px;
-}
-
-.popup__button:hover {
-  opacity: 0.9;
-}
-.popup-punishment {
-  visibility: hidden;
-  opacity: 0;
-}
-.popup-punishment-active {
-  visibility: visible;
-  opacity: 1;
-}
-/* modal */
 .install-screen {
   /* height: 100vh;
   display: none; */

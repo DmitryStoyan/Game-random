@@ -1,4 +1,4 @@
-const startButton = document.querySelector(".start");
+const startButton = document.querySelector(".start-button");
 
 // const cells = 31;
 const cells = 81;
