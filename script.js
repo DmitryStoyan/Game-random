@@ -11,28 +11,34 @@ const startButton = document.querySelector(".start-button");
 // const cells = 31;
 const cells = 81;
 
+// From 0.001 to 100
 const items = [
-  { name: "cs1.6", img: "images/game/cs1.6.png", chance: 1, color: "#ffcc01" },
   {
     name: "left-4-dead-2",
     img: "images/game/left-4-dead-2.jpeg",
-    chance: 2,
+    chance: 0.1,
     color: "#ff0200",
+  },
+  {
+    name: "cs1.6",
+    img: "images/game/cs1.6.png",
+    chance: 0.4,
+    color: "#ffcc01",
   },
   {
     name: "day-of-defeat",
     img: "images/game/day-of-defeat.png",
-    chance: 3,
+    chance: 1,
     color: "#ff03ff",
   },
+  { name: "dayz", img: "images/game/dayz.png", chance: 1.1, color: "#993367" },
   {
     name: "fortnite",
     img: "images/game/fortnite.jpeg",
-    chance: 4,
+    chance: 2,
     color: "#ff03ff",
   },
-  { name: "dayz", img: "images/game/dayz.png", chance: 5, color: "#993367" },
-  { name: "gta5", img: "images/game/gta5.png", chance: 11, color: "#993367" },
+  { name: "gta5", img: "images/game/gta5.png", chance: 3, color: "#993367" },
   {
     name: "phasmophobia",
     img: "images/game/phasmophobia.png",
