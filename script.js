@@ -46,7 +46,7 @@ const items = [
     color: "#1800ff",
   },
   { name: "pubg", img: "images/game/pubg.png", chance: 24, color: "#9accff" },
-  { name: "cs2", img: "images/game/cs2.png", chance: 29, color: "#808080" },
+  { name: "cs2", img: "images/game/cs2.png", chance: 34, color: "#808080" },
 ];
 
 function getItem() {

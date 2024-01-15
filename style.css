@@ -69,8 +69,6 @@
   bottom: 0;
   width: 197px;
   height: 5px;
-  /* background-color: red; */
-  /* box-shadow: 0 -5px 5px inherit; */
 }
 
 .active {
@@ -102,8 +100,6 @@
 }
 
 .install-screen {
-  /* height: 100vh;
-  display: none; */
   width: 100%;
   height: 100%;
   position: absolute;
@@ -158,7 +154,6 @@
 .button-active {
   opacity: 1;
 }
-/* modal */
 
 @media screen and (max-width: 480px) {
   .app {
@@ -172,12 +167,6 @@
     display: block;
   }
 }
-
-/* @media (max-device-width: 375px) {
-  .install-screen {
-    display: block;
-  }
-} */
 
 @media all and (display-mode: fullscreen) {
   .install-screen {
