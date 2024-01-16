@@ -130,7 +130,8 @@ startButton.addEventListener("click", () => {
   start();
 });
 
-swapThemeButton.addEventListener("click", () => {
+swapThemeButton.addEventListener("click", (event) => {
+  event.preventDefault();
   body.classList.toggle("body__theme_light");
   app.classList.toggle("app__theme_light");
   startButton.classList.toggle("start-button__theme_light");
