@@ -12,6 +12,7 @@
   background: #13161a;
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  transition: background 0.6s ease;
 }
 
 .app {
@@ -156,6 +157,7 @@
 }
 
 .body__theme_light {
+  transition: background 0.6s ease;
   background: whitesmoke;
 }
 
