@@ -3,14 +3,6 @@ const swapThemeButton = document.querySelector(".swap-theme-button");
 const body = document.querySelector(".body");
 const app = document.querySelector(".app");
 
-// #808080
-// #9accff
-// #1800ff
-// #993367
-// #ff03ff
-// #ff0200
-// #ffcc01
-
 // const cells = 31;
 const cells = 81;
 
@@ -130,12 +122,17 @@ startButton.addEventListener("click", () => {
   start();
 });
 
-swapThemeButton.addEventListener("click", (event) => {
-  event.preventDefault();
+swapThemeButton.addEventListener("click", () => {
+  const pointer = document.querySelector(".pointer");
   body.classList.toggle("body__theme_light");
   app.classList.toggle("app__theme_light");
   startButton.classList.toggle("start-button__theme_light");
   swapThemeButton.classList.toggle("swap-theme-button__theme_light");
+  if (pointer.src.endsWith("pointer-theme-dark.png")) {
+    pointer.src = "./images/pointer.png";
+  } else {
+    pointer.src = "./images/pointer-theme-dark.png";
+  }
 });
 
 const downloadButton = document.querySelector(".download-button");
