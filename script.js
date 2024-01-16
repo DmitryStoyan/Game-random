@@ -1,4 +1,7 @@
 const startButton = document.querySelector(".start-button");
+const swapThemeButton = document.querySelector(".swap-theme-button");
+const body = document.querySelector(".body");
+const app = document.querySelector(".app");
 
 // #808080
 // #9accff
@@ -125,6 +128,13 @@ function start() {
 
 startButton.addEventListener("click", () => {
   start();
+});
+
+swapThemeButton.addEventListener("click", () => {
+  body.classList.toggle("body__theme_light");
+  app.classList.toggle("app__theme_light");
+  startButton.classList.toggle("start-button__theme_light");
+  swapThemeButton.classList.toggle("swap-theme-button__theme_light");
 });
 
 const downloadButton = document.querySelector(".download-button");

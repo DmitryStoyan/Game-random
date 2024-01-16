@@ -155,6 +155,44 @@
   opacity: 1;
 }
 
+.body__theme_light {
+  background: whitesmoke;
+}
+
+.app__theme_light {
+  /* background: grey; */
+}
+
+.start-button__theme_light {
+  border: none;
+  background: black;
+  color: white;
+}
+
+.swap-theme-button {
+  position: absolute;
+  bottom: -160px;
+  left: 50%;
+  margin-left: -20px;
+  padding: 20px 20px;
+  background-image: url(./images/sun.png);
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 3;
+  transition: background-image 0.2s linear;
+}
+
+.swap-theme-button__theme_light {
+  background-image: url(./images/moon.png);
+  background-size: 35px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 480px) {
   .app {
     position: relative;
