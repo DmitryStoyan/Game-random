@@ -184,7 +184,7 @@
   border-radius: 5px;
   cursor: pointer;
   z-index: 3;
-  transition: background-image 0.5s linear;
+  transition: background-image 0.3s linear;
 
   /* Отключение выделения на мобильных устройствах */
   -webkit-tap-highlight-color: transparent;
