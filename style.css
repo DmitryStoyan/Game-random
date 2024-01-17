@@ -50,7 +50,7 @@
   justify-content: center;
   align-items: center;
   width: 200px;
-  opacity: 0.8;
+  opacity: 0.6;
   transition: 0.3s ease;
 }
 
@@ -160,26 +160,11 @@
   transition: background 0.6s ease;
   background: whitesmoke;
 }
-/*
-.list__item_theme_light {
-  background: grey;
-}
-
-.list__item_theme_light:nth-child(2n) {
-  background: rgba(245, 245, 245, 0.8);
-} */
 
 .app__theme_light {
   background: #777778;
   opacity: 1;
 }
-
-/* #9d9d9e
-#777778*/
-
-/* .app__theme_light:nth-child(2n) {
-  background: rgba(255, 255, 255, 0.8);
-} */
 
 .start-button__theme_light {
   border: none;
@@ -224,11 +209,6 @@
     width: 95%;
     background: #1b1f24;
     border-radius: 10px;
-  }
-
-  .app__theme_light {
-    background: #777778;
-    opacity: 1;
   }
 
   .install-screen {

@@ -125,7 +125,6 @@ startButton.addEventListener("click", () => {
 swapThemeButton.addEventListener("click", () => {
   const pointer = document.querySelector(".pointer");
   body.classList.toggle("body__theme_light");
-  app.classList.toggle("app__theme_light");
   startButton.classList.toggle("start-button__theme_light");
   swapThemeButton.classList.toggle("swap-theme-button__theme_light");
   if (pointer.src.endsWith("pointer-theme-dark.png")) {
