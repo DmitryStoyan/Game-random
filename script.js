@@ -134,15 +134,39 @@ swapThemeButton.addEventListener("click", () => {
   }
 });
 
-const downloadButton = document.querySelector(".download-button");
-// Установка
-let defaultInstallEvent = null;
-window.addEventListener("beforeinstallprompt", (event) => {
-  event.preventDefault();
-  defaultInstallEvent = event;
-  console.log("11111");
-});
-downloadButton.addEventListener("click", (event) => {
-  defaultInstallEvent.prompt();
-  console.log("22222");
-});
+// const downloadButton = document.querySelector(".download-button");
+// // Установка
+// let defaultInstallEvent = null;
+// window.addEventListener("beforeinstallprompt", (event) => {
+//   event.preventDefault();
+//   defaultInstallEvent = event;
+// });
+// downloadButton.addEventListener("click", (event) => {
+//   defaultInstallEvent.prompt();
+// });
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/path/to/your/service-worker.js")
+    .then((registration) => {
+      console.log("Service Worker registered with scope:", registration.scope);
+
+      let defaultInstallEvent = null;
+      window.addEventListener("beforeinstallprompt", (event) => {
+        event.preventDefault();
+        defaultInstallEvent = event;
+      });
+
+      const downloadButton = document.querySelector(".download-button");
+      downloadButton.addEventListener("click", (event) => {
+        if (defaultInstallEvent) {
+          defaultInstallEvent.prompt();
+        } else {
+          console.error("Install event not available yet.");
+        }
+      });
+    })
+    .catch((error) => {
+      console.error("Service Worker registration failed:", error);
+    });
+}
