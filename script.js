@@ -40,6 +40,12 @@ const items = [
     chance: 13,
     color: "#1800ff",
   },
+  {
+    name: "mudrunner",
+    img: "images/game/mudrunner.png",
+    chance: 20,
+    color: "#9accff",
+  },
   { name: "pubg", img: "images/game/pubg.png", chance: 24, color: "#9accff" },
   { name: "cs2", img: "images/game/cs2.png", chance: 34, color: "#808080" },
 ];
