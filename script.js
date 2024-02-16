@@ -4,7 +4,8 @@ const body = document.querySelector(".body");
 const app = document.querySelector(".app");
 
 // const cells = 31;
-const cells = 81;
+// const cells = 81;
+const cells = 243;
 
 // From 0.001 to 100
 const items = [
@@ -114,7 +115,8 @@ function start() {
   }, 0);
 
   //   const item = list.querySelectorAll("li")[15];
-  const item = list.querySelectorAll("li")[40];
+  //   const item = list.querySelectorAll("li")[40];
+  const item = list.querySelectorAll("li")[121];
 
   list.addEventListener("transitionend", () => {
     isStarted = false;
