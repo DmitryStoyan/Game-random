@@ -105,7 +105,7 @@ function start() {
   }
   const audio = new Audio("sound.mp3");
   // audio.volume = 0.5;
-  audio.play();
+  // audio.play();
   generateItems();
   const list = document.querySelector(".list");
 
