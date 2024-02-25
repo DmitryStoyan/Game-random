@@ -87,7 +87,7 @@ function generateItems() {
     },
     {
       root: document.querySelector(".scope"),
-      threshold: 0.1,
+      threshold: 0.9,
     }
   );
 
