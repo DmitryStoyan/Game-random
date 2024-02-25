@@ -2,12 +2,12 @@ const startButton = document.querySelector(".start-button");
 const swapThemeButton = document.querySelector(".swap-theme-button");
 const body = document.querySelector(".body");
 const app = document.querySelector(".app");
+const chopSound = new Audio("click.wav");
+const winSound = new Audio("win2.mp3");
 
-// const cells = 31;
-// const cells = 81;
+// let crossedCellsCount = 0;
 const cells = 243;
 
-// From 0.001 to 100
 const items = [
   {
     name: "left-4-dead-2",
@@ -53,12 +53,10 @@ const items = [
 
 function getItem() {
   let item;
-
   while (!item) {
     const chance = Math.floor(Math.random() * 100000);
-
     items.forEach((elm) => {
-      if (chance < elm.chance && !item) {
+      if (chance < elm.chance * 1000 && !item) {
         item = elm;
       }
     });
@@ -66,17 +64,35 @@ function getItem() {
   return item;
 }
 
+let observer;
+
 function generateItems() {
-  document.querySelector(".list").remove();
-  document.querySelector(".scope").innerHTML = `
-    <ul class='list'></ul>
-  `;
+  document.querySelector(".list")?.remove();
+  document.querySelector(".scope").innerHTML = `<ul class='list'></ul>`;
 
   const list = document.querySelector(".list");
 
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          chopSound.pause();
+          chopSound.currentTime = 0;
+          chopSound.play();
+
+          // crossedCellsCount++;
+          // console.log(`${crossedCellsCount}`);
+        }
+      });
+    },
+    {
+      root: document.querySelector(".scope"),
+      threshold: 0.9,
+    }
+  );
+
   for (let i = 0; i < cells; i++) {
     const item = getItem();
-
     const li = document.createElement("li");
     const listChanceColor = document.createElement("div");
     listChanceColor.className = "list__chance-color";
@@ -85,27 +101,20 @@ function generateItems() {
 
     li.setAttribute("data-item", JSON.stringify(item));
     li.classList.add("list__item");
-    li.innerHTML = `
-      <img class='list__item-image' src='${item.img}' alt=''>
-    `;
+    li.innerHTML = `<img class='list__item-image' src='${item.img}' alt=''>`;
     li.appendChild(listChanceColor);
     list.append(li);
+
+    observer.observe(li);
   }
 }
-
-generateItems();
 
 let isStarted = false;
 
 function start() {
-  if (isStarted) {
-    return;
-  } else {
-    isStarted = true;
-  }
-  const audio = new Audio("sound.mp3");
-  // audio.volume = 0.5;
-  // audio.play();
+  if (isStarted) return;
+  isStarted = true;
+  // crossedCellsCount = 0;
   generateItems();
   const list = document.querySelector(".list");
 
@@ -114,41 +123,42 @@ function start() {
     list.style.transform = "translate3d(-50%, 0, 0)";
   }, 0);
 
-  //   const item = list.querySelectorAll("li")[15];
-  //   const item = list.querySelectorAll("li")[40];
-  const item = list.querySelectorAll("li")[121];
-
   list.addEventListener("transitionend", () => {
     isStarted = false;
-    item.classList.add("active");
-    const data = JSON.parse(item.getAttribute("data-item"));
-    console.log(data);
+    observer.disconnect();
+    const items = list.querySelectorAll(".list__item");
+    const centerItemIndex = Math.floor(items.length / 2);
+    const centerItem = items[centerItemIndex];
+
+    if (centerItem) {
+      winSound.play();
+      const data = JSON.parse(centerItem.getAttribute("data-item"));
+      console.log("Итоговый элемент:", data);
+      centerItem.classList.add("active");
+    }
   });
 }
 
-startButton.addEventListener("click", () => {
-  start();
-});
+startButton.addEventListener("click", start);
 
 swapThemeButton.addEventListener("click", () => {
   const pointer = document.querySelector(".pointer");
   body.classList.toggle("body__theme_light");
   startButton.classList.toggle("start-button__theme_light");
   swapThemeButton.classList.toggle("swap-theme-button__theme_light");
-  if (pointer.src.endsWith("pointer-theme-dark.png")) {
-    pointer.src = "./images/pointer.png";
-  } else {
-    pointer.src = "./images/pointer-theme-dark.png";
-  }
+  pointer.src = pointer.src.endsWith("pointer-theme-dark.png")
+    ? "./images/pointer.png"
+    : "./images/pointer-theme-dark.png";
 });
 
 const downloadButton = document.querySelector(".download-button");
-// Установка
 let defaultInstallEvent = null;
 window.addEventListener("beforeinstallprompt", (event) => {
   event.preventDefault();
   defaultInstallEvent = event;
 });
-downloadButton.addEventListener("click", (event) => {
+downloadButton.addEventListener("click", () => {
   defaultInstallEvent.prompt();
 });
+
+generateItems();
