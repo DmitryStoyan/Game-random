@@ -5,7 +5,6 @@ const app = document.querySelector(".app");
 const chopSound = new Audio("click.wav");
 const winSound = new Audio("win2.mp3");
 
-// let crossedCellsCount = 0;
 const cells = 243;
 
 const items = [
@@ -76,12 +75,10 @@ function generateItems() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          clickingRouletteSound();
           chopSound.pause();
           chopSound.currentTime = 0;
           chopSound.play();
-
-          // crossedCellsCount++;
-          // console.log(`${crossedCellsCount}`);
         }
       });
     },
@@ -114,7 +111,6 @@ let isStarted = false;
 function start() {
   if (isStarted) return;
   isStarted = true;
-  // crossedCellsCount = 0;
   generateItems();
   const list = document.querySelector(".list");
 
