@@ -75,7 +75,6 @@ function generateItems() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          clickingRouletteSound();
           chopSound.pause();
           chopSound.currentTime = 0;
           chopSound.play();
