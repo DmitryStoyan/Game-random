@@ -2,8 +2,8 @@ const startButton = document.querySelector(".start-button");
 const swapThemeButton = document.querySelector(".swap-theme-button");
 const body = document.querySelector(".body");
 const app = document.querySelector(".app");
-const chopSound = new Audio("click.wav");
-const winSound = new Audio("win2.mp3");
+const chopSound = new Audio("sounds/click.wav");
+const winSound = new Audio("sounds/win2.mp3");
 
 const cells = 243;
 
