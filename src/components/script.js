@@ -5,49 +5,76 @@ const app = document.querySelector(".app");
 const chopSound = new Audio("sounds/click.wav");
 const winSound = new Audio("sounds/win2.mp3");
 
+const preloader = document.querySelector(".preloader");
+let isContentLoad = false;
+
+function closePreloader() {
+  isContentLoad = true;
+  preloader.remove();
+}
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    if (isContentLoad) {
+      closePreloader();
+    } else {
+      setTimeout(closePreloader, 2000);
+    }
+  }, 2000);
+});
 const cells = 243;
 
 const items = [
   {
     name: "left-4-dead-2",
-    img: "images/game/left-4-dead-2.jpeg",
+    img: "./images/game/left-4-dead-2.jpeg",
     chance: 0.1,
     color: "#ff0200",
   },
   {
     name: "cs1.6",
-    img: "images/game/cs1.6.png",
+    img: "./images/game/cs1.6.png",
     chance: 0.4,
     color: "#ffcc01",
   },
   {
     name: "day-of-defeat",
-    img: "images/game/day-of-defeat.png",
+    img: "./images/game/day-of-defeat.png",
     chance: 1,
     color: "#ff03ff",
   },
-  { name: "dayz", img: "images/game/dayz.png", chance: 1.1, color: "#993367" },
+  {
+    name: "dayz",
+    img: "./images/game/dayz.png",
+    chance: 1.1,
+    color: "#993367",
+  },
   {
     name: "fortnite",
-    img: "images/game/fortnite.jpeg",
+    img: "./images/game/fortnite.jpeg",
     chance: 2,
     color: "#ff03ff",
   },
-  { name: "gta5", img: "images/game/gta5.png", chance: 3, color: "#993367" },
+  { name: "gta5", img: "./images/game/gta5.png", chance: 3, color: "#993367" },
   {
     name: "phasmophobia",
-    img: "images/game/phasmophobia.png",
+    img: "./images/game/phasmophobia.png",
     chance: 13,
     color: "#1800ff",
   },
   {
     name: "mudrunner",
-    img: "images/game/mudrunner.png",
+    img: "./images/game/mudrunner.png",
     chance: 20,
     color: "#9accff",
   },
-  { name: "pubg", img: "images/game/pubg.png", chance: 24, color: "#9accff" },
-  { name: "cs2", img: "images/game/cs2.png", chance: 34, color: "#808080" },
+  {
+    name: "pubg",
+    img: "./images/game/pubg.png",
+    chance: 24,
+    color: "#9accff",
+  },
+  { name: "cs2", img: "./images/game/cs2.png", chance: 34, color: "#808080" },
 ];
 
 function getItem() {

@@ -6,14 +6,23 @@
       name="viewport"
       content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" href="./random-icon.png" type="image/x-icon" />
-    <link rel="manifest" href="./manifest.webmanifest" />
+    <!-- <link rel="stylesheet" href="./styles/preloader.css">
+    <link rel="stylesheet" href="./styles/style.css" /> -->
+    <link rel="stylesheet" href="./index.css">
+    <link rel="icon" href="../random-icon.png" type="image/x-icon" />
+    <link rel="manifest" href="../manifest.webmanifest" />
     <title>Random Game</title>
   </head>
   <body class="body">
+
+    <div class="preloader">
+      <div class="loader">
+        <div class="tile"></div>
+      </div>
+    </div>
+
     <div class="install-screen">
-      <img class="icon" src="./random-icon.png" />
+      <img class="icon" src="../random-icon.png" />
       <p class="subtitle">Random Game</p>
       <div class="wrapper">
         <button class="download-button">Скачать игру на телефон</button>
@@ -27,7 +36,7 @@
       </div>
 
       <button class="start-button">Крутить</button>
-    <script type="module" src="./script.js"></script>
+    <script type="module" src="./components/script.js"></script>
   </body>
 </html>
 
