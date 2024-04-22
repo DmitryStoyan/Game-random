@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -32,7 +33,7 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              outputPath: "sounds", // путь для сохранения аудиофайлов
+              outputPath: "sounds",
             },
           },
         ],
@@ -40,6 +41,18 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+      {
+        test: /\.webmanifest$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "", // Путь к файлу манифеста в build
+            },
+          },
+        ],
       },
     ],
   },
@@ -56,10 +69,22 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html"),
+      // Добавляем файл manifest.webmanifest в список файлов для HtmlWebpackPlugin
+      files: {
+        manifest: "./manifest.webmanifest",
+      },
     }),
     new MiniCssExtractPlugin({
       filename: "css/[name].[contenthash:8].[id].css",
       chunkFilename: "css/[name].[contenthash:8].[id].css",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src", "manifest.webmanifest"),
+          to: path.resolve(__dirname, "build", ""),
+        },
+      ],
     }),
   ],
 };
