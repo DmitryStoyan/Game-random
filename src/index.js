@@ -195,6 +195,7 @@ window.addEventListener("beforeinstallprompt", (event) => {
   event.preventDefault();
   defaultInstallEvent = event;
 });
+
 downloadButton.addEventListener("click", () => {
   defaultInstallEvent.prompt();
 });

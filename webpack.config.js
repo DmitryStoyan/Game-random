@@ -22,7 +22,7 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
         loader: "file-loader",
         options: {
-          name: "[name].[hash].[ext]",
+          name: "[name].[ext]",
           outputPath: "images",
         },
       },
@@ -49,7 +49,7 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              outputPath: "", // Путь к файлу манифеста в build
+              outputPath: "",
             },
           },
         ],
@@ -69,14 +69,13 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html"),
-      // Добавляем файл manifest.webmanifest в список файлов для HtmlWebpackPlugin
       files: {
         manifest: "./manifest.webmanifest",
       },
     }),
     new MiniCssExtractPlugin({
-      filename: "css/[name].[contenthash:8].[id].css",
-      chunkFilename: "css/[name].[contenthash:8].[id].css",
+      filename: "css/[name].[contenthash:8].css",
+      chunkFilename: "css/[name].[contenthash:8].css",
     }),
     new CopyWebpackPlugin({
       patterns: [
