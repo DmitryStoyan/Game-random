@@ -22,14 +22,6 @@
   border-radius: 10px;
 }
 
-.pointer {
-  position: absolute;
-  left: 50%;
-  transform: translate3d(-50%, -25px, 0);
-  height: 40px;
-  z-index: 2;
-}
-
 .scope {
   overflow: hidden;
 }
@@ -221,4 +213,24 @@
   .install-screen {
     display: none;
   }
+}
+
+.pointer {
+  background-image: url(@/images/pointer-theme-dark.png);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  transform: translate3d(-50%, -25px, 0);
+  height: 40px;
+  width: 40px;
+  z-index: 2;
+}
+
+.pointer-theme-dark {
+  background-image: url(@/images/pointer-theme-dark.png);
+}
+
+.pointer-theme-light {
+  background-image: url(@/images/pointer.png);
 }

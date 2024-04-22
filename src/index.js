@@ -6,6 +6,7 @@ const body = document.querySelector(".body");
 const app = document.querySelector(".app");
 import clickSoundPath from "@/sounds/click.wav";
 import winSoundPath from "@/sounds/win2.mp3";
+
 const chopSound = new Audio(clickSoundPath);
 const winSound = new Audio(winSoundPath);
 
@@ -184,9 +185,8 @@ swapThemeButton.addEventListener("click", () => {
   body.classList.toggle("body__theme_light");
   startButton.classList.toggle("start-button__theme_light");
   swapThemeButton.classList.toggle("swap-theme-button__theme_light");
-  pointer.src = pointer.src.endsWith("pointer-theme-dark.png")
-    ? "./images/pointer.png"
-    : "./images/pointer-theme-dark.png";
+  pointer.classList.toggle("pointer-theme-dark");
+  pointer.classList.toggle("pointer-theme-light");
 });
 
 const downloadButton = document.querySelector(".download-button");
