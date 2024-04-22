@@ -10,6 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, "build"),
     filename: "js/[name].[contenthash].js",
     clean: true,
+    assetModuleFilename: "assets/[name]-[contenthash][ext]",
   },
   module: {
     rules: [
@@ -20,23 +21,17 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
-        loader: "file-loader",
-        options: {
-          name: "[name].[ext]",
-          outputPath: "images",
+        type: "asset/resource",
+        generator: {
+          filename: "images/[name].[hash][ext][query]",
         },
       },
       {
         test: /\.(wav|mp3)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "sounds",
-            },
-          },
-        ],
+        type: "asset/resource",
+        generator: {
+          filename: "sounds/[name].[hash][ext][query]",
+        },
       },
       {
         test: /\.css$/,
@@ -44,15 +39,10 @@ module.exports = {
       },
       {
         test: /\.webmanifest$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "",
-            },
-          },
-        ],
+        type: "asset/resource",
+        generator: {
+          filename: "[name][ext]",
+        },
       },
     ],
   },

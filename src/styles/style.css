@@ -179,7 +179,7 @@
   left: 50%;
   margin-left: -20px;
   padding: 20px 20px;
-  background-image: url(../images/sun.png);
+  background-image: url(@/images/sun.png);
   background-color: transparent;
   background-size: cover;
   background-repeat: no-repeat;
@@ -199,7 +199,7 @@
 }
 
 .swap-theme-button__theme_light {
-  background-image: url(../images/moon.png);
+  background-image: url(@/images/moon.png);
   background-size: 35px;
   cursor: pointer;
 }
