@@ -6,8 +6,14 @@
       name="viewport"
       content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <link rel="icon" href="../random-icon.png" type="image/x-icon" />
-    <link rel="manifest" href="./manifest.webmanifest" />
+    <link
+      rel="icon"
+      href="<%= require('./images/random-icon.png') %>"
+      type="image/x-icon"
+    />
+
+    <!-- <link rel="manifest" href="./manifest.webmanifest" /> -->
+    <link rel="manifest" href="<%= require('./manifest.webmanifest') %>" />
     <title>Random Game</title>
   </head>
   <body class="body">
@@ -18,7 +24,8 @@
     </div>
 
     <div class="install-screen">
-      <img class="icon" src="../random-icon.png" alt="" />
+      <img class="icon" src="<%=require('./images/random-icon.png')%>" alt="" />
+
       <p class="subtitle">Random Game</p>
       <div class="wrapper">
         <button class="download-button">Скачать игру на телефон</button>

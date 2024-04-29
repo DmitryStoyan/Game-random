@@ -194,9 +194,11 @@ let defaultInstallEvent = null;
 window.addEventListener("beforeinstallprompt", (event) => {
   event.preventDefault();
   defaultInstallEvent = event;
+  console.log("Событие beforeinstallprompt сработало");
 });
 
 downloadButton.addEventListener("click", () => {
+  console.log("click on downloadButton");
   defaultInstallEvent.prompt();
 });
 

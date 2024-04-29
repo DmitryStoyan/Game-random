@@ -38,11 +38,9 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.webmanifest$/,
+        test: /\.webmanifest$/i,
+        use: "webpack-webmanifest-loader",
         type: "asset/resource",
-        generator: {
-          filename: "[name][ext]",
-        },
       },
     ],
   },
