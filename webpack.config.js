@@ -10,7 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, "build"),
     filename: "js/[name].[contenthash].js",
     clean: true,
-    assetModuleFilename: "assets/[name]-[contenthash][ext]",
+    assetModuleFilename: "[name]-[contenthash][ext]",
   },
   module: {
     rules: [
