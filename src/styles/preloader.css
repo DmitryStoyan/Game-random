@@ -30,12 +30,12 @@
 .loader {
   --speed: 1000ms;
   position: relative;
-  font-size: 2.5em;
+  font-size: 3rem;
 }
 
 .loader .tile {
-  width: 1em;
-  height: 1em;
+  width: 4rem;
+  height: 4rem;
   animation: var(--speed) ease infinite jump;
   transform-origin: 0 100%;
   will-change: transform;
@@ -126,4 +126,8 @@
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+@media (max-width: 500px) {
+  .loader {
+    font-size: 4em;
+  }
+}

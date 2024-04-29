@@ -29,15 +29,15 @@ export function closePreloader() {
   preloader.remove();
 }
 
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    if (isContentLoad) {
-      closePreloader();
-    } else {
-      setTimeout(closePreloader, 1000);
-    }
-  }, 1000);
-});
+// window.addEventListener("load", () => {
+//   setTimeout(() => {
+//     if (isContentLoad) {
+//       closePreloader();
+//     } else {
+//       setTimeout(closePreloader, 1000);
+//     }
+//   }, 1000);
+// });
 
 const cells = 243;
 
