@@ -40,6 +40,7 @@ html {
 .app {
   position: relative;
   width: 120rem;
+  max-width: 90%;
   background: #1b1f24;
   border-radius: 10px;
 }
