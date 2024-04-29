@@ -34,9 +34,9 @@ window.addEventListener("load", () => {
     if (isContentLoad) {
       closePreloader();
     } else {
-      setTimeout(closePreloader, 500);
+      setTimeout(closePreloader, 1500);
     }
-  }, 500);
+  }, 1500);
 });
 
 const cells = 243;
