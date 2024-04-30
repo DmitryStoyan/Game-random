@@ -4,6 +4,9 @@ const startButton = document.querySelector(".start-button");
 const swapThemeButton = document.querySelector(".swap-theme-button");
 const body = document.querySelector(".body");
 const app = document.querySelector(".app");
+const menu = document.querySelector(".menu");
+const burgerButton = document.querySelector(".burger-menu__button");
+const menuCloseButton = document.querySelector(".menu__close-button");
 // import clickSoundPath from "@/sounds/click.wav";
 // import winSoundPath from "@/sounds/win2.mp3";
 
@@ -187,6 +190,14 @@ swapThemeButton.addEventListener("click", () => {
   swapThemeButton.classList.toggle("swap-theme-button__theme_light");
   pointer.classList.toggle("pointer-theme-dark");
   pointer.classList.toggle("pointer-theme-light");
+});
+
+burgerButton.addEventListener("click", () => {
+  menu.classList.add("menu_active");
+});
+
+menuCloseButton.addEventListener("click", () => {
+  menu.classList.remove("menu_active");
 });
 
 // const downloadButton = document.querySelector(".download-button");

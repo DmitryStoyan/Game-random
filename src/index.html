@@ -11,7 +11,7 @@
       href="<%= require('./images/random-icon.png') %>"
       type="image/x-icon"
     />
-    <link rel="manifest" href="<%= require('./manifest.webmanifest') %>" />
+    <!-- <link rel="manifest" href="<%= require('./manifest.webmanifest') %>" /> -->
     <title>Random Game</title>
   </head>
   <body class="body">
@@ -30,10 +30,29 @@
       </div>
     </div> -->
 
+    <div class="menu">
+      <div class="menu__content">
+        <div class="install-screen">
+          <button class="menu__close-button"></button>
+          <img
+            class="icon"
+            src="<%=require('./images/random-icon.png')%>"
+            alt=""
+          />
+
+          <p class="subtitle">Random Game</p>
+          <div class="wrapper">
+            <button class="download-button">Скачать игру на телефон</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="page">
       <header class="header">
-        <div class="header__logo"></div>
-        <button class="burger-menu__button">меню</button>
+        <a class="header__logo" href="#"> Random Game </a>
+        <!-- <div class="header__logo"></div> -->
+        <button class="burger-menu__button"></button>
       </header>
       <div class="roulette">
         <div class="pointer"></div>

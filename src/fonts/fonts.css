@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "DancingScript-Bold";
+  src: url(./DancingScript-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DancingScript-Medium";
+  src: url(./DancingScript-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DancingScript-Regular";
+  src: url(./DancingScript-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DancingScript-SemiBold";
+  src: url(./DancingScript-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DancingScript-VariableFont";
+  src: url(./DancingScript-VariableFont_wght.ttf) format("truetype");
+  font-weight: 1 999;
+  font-style: normal;
+  font-named-instance: "Variable Font";
+  font-display: swap;
+}
