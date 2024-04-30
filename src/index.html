@@ -15,28 +15,38 @@
     <title>Random Game</title>
   </head>
   <body class="body">
-    <div class="preloader">
+    <!-- <div class="preloader">
       <div class="loader">
         <div class="tile"></div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="install-screen">
+    <!-- <div class="install-screen">
       <img class="icon" src="<%=require('./images/random-icon.png')%>" alt="" />
 
       <p class="subtitle">Random Game</p>
       <div class="wrapper">
         <button class="download-button">Скачать игру на телефон</button>
       </div>
-    </div>
+    </div> -->
 
-    <div class="app">
-      <button class="swap-theme-button"></button>
-      <div class="pointer"></div>
-      <div class="scope">
-        <ul class="list"></ul>
+    <div class="page">
+      <header class="header">
+        <div class="header__logo"></div>
+        <button class="burger-menu__button">меню</button>
+      </header>
+      <div class="roulette">
+        <div class="pointer"></div>
+        <div class="app">
+          <div class="scope">
+            <ul class="list"></ul>
+          </div>
+        </div>
       </div>
-      <button class="start-button">Крутить</button>
+      <div class="buttons-wrapper">
+        <button class="start-button">Крутить</button>
+        <button class="swap-theme-button"></button>
+      </div>
     </div>
   </body>
 </html>

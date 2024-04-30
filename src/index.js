@@ -4,11 +4,11 @@ const startButton = document.querySelector(".start-button");
 const swapThemeButton = document.querySelector(".swap-theme-button");
 const body = document.querySelector(".body");
 const app = document.querySelector(".app");
-import clickSoundPath from "@/sounds/click.wav";
-import winSoundPath from "@/sounds/win2.mp3";
+// import clickSoundPath from "@/sounds/click.wav";
+// import winSoundPath from "@/sounds/win2.mp3";
 
-const chopSound = new Audio(clickSoundPath);
-const winSound = new Audio(winSoundPath);
+// const chopSound = new Audio(clickSoundPath);
+// const winSound = new Audio(winSoundPath);
 
 import left4Dead2Image from "@/images/game/left-4-dead-2.jpeg";
 import cs16Image from "@/images/game/cs1.6.png";
@@ -34,9 +34,9 @@ export function closePreloader() {
 //     if (isContentLoad) {
 //       closePreloader();
 //     } else {
-//       setTimeout(closePreloader, 1000);
+//       setTimeout(closePreloader, 500);
 //     }
-//   }, 1000);
+//   }, 500);
 // });
 
 const cells = 243;
@@ -119,9 +119,9 @@ function generateItems() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          chopSound.pause();
-          chopSound.currentTime = 0;
-          chopSound.play();
+          // chopSound.pause();
+          // chopSound.currentTime = 0;
+          // chopSound.play();
         }
       });
     },
@@ -170,7 +170,7 @@ function start() {
     const centerItem = items[centerItemIndex];
 
     if (centerItem) {
-      winSound.play();
+      // winSound.play();
       const data = JSON.parse(centerItem.getAttribute("data-item"));
       console.log("Итоговый элемент:", data);
       centerItem.classList.add("active");
@@ -189,17 +189,17 @@ swapThemeButton.addEventListener("click", () => {
   pointer.classList.toggle("pointer-theme-light");
 });
 
-const downloadButton = document.querySelector(".download-button");
-let defaultInstallEvent = null;
-window.addEventListener("beforeinstallprompt", (event) => {
-  event.preventDefault();
-  defaultInstallEvent = event;
-  console.log("Событие beforeinstallprompt сработало");
-});
+// const downloadButton = document.querySelector(".download-button");
+// let defaultInstallEvent = null;
+// window.addEventListener("beforeinstallprompt", (event) => {
+//   event.preventDefault();
+//   defaultInstallEvent = event;
+//   console.log("Событие beforeinstallprompt сработало");
+// });
 
-downloadButton.addEventListener("click", () => {
-  console.log("click on downloadButton");
-  defaultInstallEvent.prompt();
-});
+// downloadButton.addEventListener("click", () => {
+//   console.log("click on downloadButton");
+//   defaultInstallEvent.prompt();
+// });
 
 generateItems();
