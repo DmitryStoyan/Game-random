@@ -299,10 +299,6 @@ html {
   .start-button {
     padding: 1.5rem 4rem;
   }
-
-  .roulette {
-    margin: 15rem 0 0 0;
-  }
 }
 
 @media screen and (max-width: 480px) {
