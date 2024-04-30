@@ -68,11 +68,7 @@ html {
 }
 
 .app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* position: relative; */
+  position: relative;
   /* width: 120rem; */
   /* max-width: 90%; */
   background: #1b1f24;
@@ -85,13 +81,14 @@ html {
 }
 
 .list {
-  /* position: relative; */
+  position: relative;
   display: inline-flex;
   left: 0;
   transform: translate3d(0, 0, 0);
   list-style: none;
   /* transition: 7.9s cubic-bezier(0.21, 0.53, 0.29, 0.99); */
-  transition: 15s cubic-bezier(0.21, 0.53, 0.29, 0.99);
+  /* transition: 15s cubic-bezier(0.21, 0.53, 0.29, 0.99); */
+  transition: 3s cubic-bezier(0.21, 0.53, 0.29, 0.99);
 }
 
 .list__item {
