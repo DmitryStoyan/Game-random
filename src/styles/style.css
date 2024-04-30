@@ -1,3 +1,13 @@
+:root {
+  box-sizing: border-box;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  /* background-color: var(--color-root, hsl(0deg, 0%, 0%)); */
+  /* background-color: #13161a; */
+  color: var(--color-text, hsl(210deg, 15%, 96%));
+  /* background-image: radial-gradient(#222, rgba(255, 255, 255, 0)); */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,29 +18,8 @@ html {
   font-size: calc(100vw / 1920 * 10);
 }
 
-@media (max-width: 1024px) {
-  html {
-    font-size: calc(100vw / 768 * 10);
-  }
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: calc(100vw / 500 * 10);
-  }
-}
-
-@media (max-width: 500px) {
-  html {
-    font-size: calc(100vw / 375 * 10);
-  }
-}
-
 .body {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background: #13161a;
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -38,17 +27,20 @@ html {
 }
 
 .page {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  height: 100vh;
   margin: 0 auto;
   max-width: 90%;
   width: 120rem;
 }
 
 .header {
-  margin: 0 auto;
+  padding: 1rem 0 0 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px;
   outline: 3px red solid;
 }
 
@@ -64,7 +56,7 @@ html {
 
 .roulette {
   position: relative;
-  margin: 30rem 0 0 0;
+  margin: 40rem 0 0 0;
 }
 
 .app {
@@ -129,7 +121,7 @@ html {
 }
 
 .buttons-wrapper {
-  margin: 5rem 0 0 0;
+  margin: 10rem 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -264,25 +256,6 @@ html {
   outline: 3px red solid;
 }
 
-@media screen and (max-width: 480px) {
-  .app {
-    position: relative;
-    width: 95%;
-    background: #1b1f24;
-    border-radius: 10px;
-  }
-
-  .install-screen {
-    display: block;
-  }
-}
-
-@media all and (display-mode: fullscreen) {
-  .install-screen {
-    display: none;
-  }
-}
-
 .pointer {
   background-image: url(@/images/pointer-theme-dark.png);
   background-position: center;
@@ -302,4 +275,50 @@ html {
 
 .pointer-theme-light {
   background-image: url(@/images/pointer.png);
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: calc(100vw / 1024 * 10);
+  }
+  .roulette {
+    margin: 30rem 0 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: calc(100vw / 768 * 10);
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: calc(100vw / 500 * 10);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app {
+    position: relative;
+    width: 95%;
+    background: #1b1f24;
+    border-radius: 10px;
+  }
+
+  .install-screen {
+    display: block;
+  }
+}
+
+@media (max-width: 375px) {
+  html {
+    font-size: calc(100vw / 375 * 10);
+  }
+}
+
+@media all and (display-mode: fullscreen) {
+  .install-screen {
+    display: none;
+  }
 }
