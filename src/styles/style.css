@@ -79,8 +79,8 @@ html {
   transform: translate3d(0, 0, 0);
   list-style: none;
   /* transition: 7.9s cubic-bezier(0.21, 0.53, 0.29, 0.99); */
-  /* transition: 15s cubic-bezier(0.21, 0.53, 0.29, 0.99); */
-  transition: 3s cubic-bezier(0.21, 0.53, 0.29, 0.99);
+  transition: 15s cubic-bezier(0.21, 0.53, 0.29, 0.99);
+  /* transition: 3s cubic-bezier(0.21, 0.53, 0.29, 0.99); */
 }
 
 .list__item {
@@ -134,7 +134,7 @@ html {
   left: 50%;
   top: 100%; */
   /* transform: translate3d(-50%, 20px, 0); */
-  padding: 0.8rem 2.5rem;
+  padding: 1rem 3rem;
   background: #67aeff;
   color: white;
   font-size: 1.6rem;
@@ -295,6 +295,13 @@ html {
 @media (max-width: 500px) {
   html {
     font-size: calc(100vw / 500 * 10);
+  }
+  .start-button {
+    padding: 1.5rem 4rem;
+  }
+
+  .roulette {
+    margin: 15rem 0 0 0;
   }
 }
 
