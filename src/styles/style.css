@@ -315,7 +315,7 @@ html {
 
 @media (max-width: 1024px) {
   html {
-    font-size: calc(100vw / 1024 * 10);
+    font-size: calc(100vw / 768 * 10);
   }
   .roulette {
     margin: 30rem 0 0 0;
@@ -324,7 +324,15 @@ html {
 
 @media (max-width: 768px) {
   html {
-    font-size: calc(100vw / 768 * 10);
+    font-size: calc(100vw / 500 * 10);
+  }
+
+  .page {
+    max-width: 95%;
+  }
+
+  .roulette {
+    margin: 20rem 0 0 0;
   }
 }
 
@@ -332,8 +340,20 @@ html {
   html {
     font-size: calc(100vw / 500 * 10);
   }
+
+  .roulette {
+    margin: 30rem 0 0 0;
+  }
   .start-button {
     padding: 1.5rem 4rem;
+  }
+
+  .list__item {
+    width: 30rem;
+  }
+
+  .list__chance-color {
+    width: 29.7rem;
   }
 }
 
