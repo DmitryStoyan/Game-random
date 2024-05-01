@@ -64,6 +64,7 @@ html {
   position: relative;
   /* width: 120rem; */
   /* max-width: 90%; */
+  margin: 0 auto;
   background: #1b1f24;
   border-radius: 10px;
   overflow: hidden;
@@ -360,7 +361,6 @@ html {
 @media screen and (max-width: 480px) {
   .app {
     position: relative;
-    width: 95%;
     background: #1b1f24;
     border-radius: 10px;
   }
