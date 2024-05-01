@@ -173,6 +173,7 @@ html {
   height: 24px;
   border: none;
   cursor: pointer;
+  outline: 3px red solid;
 }
 
 .install-screen {
@@ -188,12 +189,14 @@ html {
   width: 30rem;
   margin: auto;
   margin-top: 3rem;
+  outline: 3px red solid;
 }
 .subtitle {
   font-size: x-large;
   width: 100%;
   text-align: center;
   color: black;
+  outline: 3px red solid;
 }
 .wrapper {
   width: 100%;
@@ -205,6 +208,7 @@ html {
   background-color: black;
   color: aliceblue;
   font-size: 2.1rem;
+  outline: 3px red solid;
 }
 
 .popup-active {
