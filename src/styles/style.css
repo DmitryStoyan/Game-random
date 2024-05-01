@@ -380,8 +380,8 @@ html {
   }
 }
 
-@media all and (display-mode: fullscreen) {
+/* @media all and (display-mode: fullscreen) {
   .install-screen {
     display: none;
   }
-}
+} */
