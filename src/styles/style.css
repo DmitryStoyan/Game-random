@@ -41,18 +41,16 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* outline: 3px red solid; */
 }
 
 .header__logo {
   font-family: "DancingScript-Regular", serif;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 900;
   color: aliceblue;
   text-decoration: none;
   /* width: 13rem;
   height: 7rem; */
-  /* outline: 3px red solid; */
 }
 
 .roulette {
@@ -165,15 +163,17 @@ html {
 }
 
 .menu__close-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
   background: url(../images/close.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   border: none;
   cursor: pointer;
-  outline: 3px red solid;
 }
 
 .install-screen {
@@ -189,14 +189,12 @@ html {
   width: 30rem;
   margin: auto;
   margin-top: 3rem;
-  outline: 3px red solid;
 }
 .subtitle {
   font-size: x-large;
   width: 100%;
   text-align: center;
   color: black;
-  outline: 3px red solid;
 }
 .wrapper {
   width: 100%;
@@ -204,11 +202,10 @@ html {
 }
 .download-button {
   margin: 10% 0 0;
-  padding: 1.5rem 3rem;
+  padding: 1rem 2rem;
   background-color: black;
   color: aliceblue;
   font-size: 2.1rem;
-  outline: 3px red solid;
 }
 
 .popup-active {
@@ -294,7 +291,6 @@ html {
 }
 
 .burger-menu__button {
-  /* outline: 3px red solid; */
 }
 
 .pointer {
