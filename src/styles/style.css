@@ -164,8 +164,8 @@ html {
 
 .menu__close-button {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 3rem;
+  right: 3rem;
   background: url(../images/close.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -188,10 +188,11 @@ html {
   display: block;
   width: 30rem;
   margin: auto;
-  margin-top: 3rem;
+  margin-top: 20rem;
 }
 .subtitle {
   font-size: x-large;
+  margin-top: 7rem;
   width: 100%;
   text-align: center;
   color: black;
@@ -201,7 +202,7 @@ html {
   text-align: center;
 }
 .download-button {
-  margin: 10% 0 0;
+  margin: 7rem 0 0;
   padding: 1rem 2rem;
   background-color: black;
   color: aliceblue;
@@ -368,11 +369,23 @@ html {
   .install-screen {
     display: block;
   }
+
+  .start-button {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 375px) {
   html {
     font-size: calc(100vw / 375 * 10);
+  }
+
+  .list__item {
+    width: 20rem;
+  }
+
+  .list__chance-color {
+    width: 19.7rem;
   }
 }
 
