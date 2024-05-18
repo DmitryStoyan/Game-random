@@ -243,7 +243,12 @@ function createCard(card) {
   image.alt = card.name;
   image.src = card.url;
 
-  image.addEventListener("click", (event) => {
+  image.addEventListener("click", () => {
+    overlay.classList.toggle("overlay_active");
+    console.log("game select image click");
+  });
+
+  overlay.addEventListener("click", () => {
     overlay.classList.toggle("overlay_active");
     console.log("game select image click");
   });
