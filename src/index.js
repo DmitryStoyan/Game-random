@@ -29,20 +29,20 @@ import cs2Image from "@/images/game/cs2.png";
 
 export let isContentLoad = false;
 
-export function closePreloader() {
-  isContentLoad = true;
-  preloader.remove();
-}
+// export function closePreloader() {
+//   isContentLoad = true;
+//   preloader.remove();
+// }
 
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    if (isContentLoad) {
-      closePreloader();
-    } else {
-      setTimeout(closePreloader, 500);
-    }
-  }, 500);
-});
+// window.addEventListener("load", () => {
+//   setTimeout(() => {
+//     if (isContentLoad) {
+//       closePreloader();
+//     } else {
+//       setTimeout(closePreloader, 500);
+//     }
+//   }, 500);
+// });
 
 const cells = 243;
 
@@ -238,11 +238,13 @@ function createCard(card) {
     .querySelector(".game-library__item")
     .cloneNode(true);
   const image = newCard.querySelector(".game-library__img");
+  const overlay = newCard.querySelector(".overlay");
 
   image.alt = card.name;
   image.src = card.url;
 
   image.addEventListener("click", (event) => {
+    overlay.classList.toggle("overlay_active");
     console.log("game select image click");
   });
 

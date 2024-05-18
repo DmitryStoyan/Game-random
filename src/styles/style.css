@@ -49,8 +49,6 @@ html {
   font-weight: 900;
   color: aliceblue;
   text-decoration: none;
-  /* width: 13rem;
-  height: 7rem; */
 }
 
 .roulette {
@@ -60,8 +58,6 @@ html {
 
 .app {
   position: relative;
-  /* width: 120rem; */
-  /* max-width: 90%; */
   margin: 0 auto;
   background: #1b1f24;
   border-radius: 10px;
@@ -410,6 +406,11 @@ html {
   max-width: 90%;
 }
 
+.game-library__item {
+  position: relative;
+  cursor: pointer;
+}
+
 .game-library {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -423,6 +424,31 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.overlay-logo {
+  width: 50px;
+  height: 50px;
+}
+
+.overlay_active {
+  opacity: 1;
+  visibility: visible;
 }
 
 @media (max-width: 1024px) {
