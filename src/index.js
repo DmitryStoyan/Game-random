@@ -1,17 +1,20 @@
 import "./index.css";
 
-const startButton = document.querySelector(".start-button");
-const swapThemeButton = document.querySelector(".swap-theme-button");
-const body = document.querySelector(".body");
-const app = document.querySelector(".app");
-const menu = document.querySelector(".menu");
-const burgerButton = document.querySelector(".burger-menu__button");
-const menuCloseButton = document.querySelector(".menu__close-button");
-import clickSoundPath from "@/sounds/click.wav";
-import winSoundPath from "@/sounds/win2.mp3";
-
-const chopSound = new Audio(clickSoundPath);
-const winSound = new Audio(winSoundPath);
+import { initialGames } from "./initialGames";
+import {
+  selectGameButton,
+  gameSelectionPopup,
+  startButton,
+  swapThemeButton,
+  body,
+  app,
+  menu,
+  burgerButton,
+  menuCloseButton,
+  gameSelectionCloseButton,
+  preloader,
+  gameLibrary,
+} from "./constants";
 
 import left4Dead2Image from "@/images/game/left-4-dead-2.jpeg";
 import cs16Image from "@/images/game/cs1.6.png";
@@ -24,7 +27,6 @@ import mudrunnerImage from "@/images/game/mudrunner.png";
 import pubgImage from "@/images/game/pubg.png";
 import cs2Image from "@/images/game/cs2.png";
 
-export const preloader = document.querySelector(".preloader");
 export let isContentLoad = false;
 
 export function closePreloader() {
@@ -122,9 +124,9 @@ function generateItems() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          chopSound.pause();
-          chopSound.currentTime = 0;
-          chopSound.play();
+          // chopSound.pause();
+          // chopSound.currentTime = 0;
+          // chopSound.play();
         }
       });
     },
@@ -173,7 +175,7 @@ function start() {
     const centerItem = items[centerItemIndex];
 
     if (centerItem) {
-      winSound.play();
+      // winSound.play();
       const data = JSON.parse(centerItem.getAttribute("data-item"));
       console.log("Итоговый элемент:", data);
       centerItem.classList.add("active");
@@ -192,12 +194,28 @@ swapThemeButton.addEventListener("click", () => {
   pointer.classList.toggle("pointer-theme-light");
 });
 
+function openedPopup(popup) {
+  popup.classList.add("popup_opened");
+}
+
+function closedPopup(popup) {
+  popup.classList.remove("popup_opened");
+}
+
 burgerButton.addEventListener("click", () => {
-  menu.classList.add("menu_active");
+  openedPopup(menu);
 });
 
 menuCloseButton.addEventListener("click", () => {
-  menu.classList.remove("menu_active");
+  closedPopup(menu);
+});
+
+selectGameButton.addEventListener("click", () => {
+  openedPopup(gameSelectionPopup);
+});
+
+gameSelectionCloseButton.addEventListener("click", () => {
+  closedPopup(gameSelectionPopup);
 });
 
 // const downloadButton = document.querySelector(".download-button");
@@ -212,5 +230,27 @@ menuCloseButton.addEventListener("click", () => {
 //   console.log("click on downloadButton");
 //   defaultInstallEvent.prompt();
 // });
+
+function createCard(card) {
+  const contentItemTemplate =
+    gameLibrary.querySelector("#place-template").content;
+  const newCard = contentItemTemplate
+    .querySelector(".game-library__item")
+    .cloneNode(true);
+  const image = newCard.querySelector(".game-library__img");
+
+  image.alt = card.name;
+  image.src = card.url;
+
+  image.addEventListener("click", (event) => {
+    console.log("game select image click");
+  });
+
+  return newCard;
+}
+
+initialGames.forEach((card) => {
+  gameLibrary.prepend(createCard(card));
+});
 
 generateItems();

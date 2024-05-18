@@ -155,7 +155,9 @@ html {
   position: absolute;
   z-index: 5;
   background: wheat;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .menu_active {
@@ -315,12 +317,142 @@ html {
   background-image: url(@/images/pointer.png);
 }
 
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  background-color: #13161a;
+  padding: 2rem 1rem;
+}
+
+.game-selection__close-button {
+  background-image: url(@/images/back-button.png);
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  cursor: pointer;
+}
+
+.game-selection__title {
+  font-size: 3rem;
+}
+
+.header-menu__logo {
+  width: 4rem;
+  height: 4rem;
+}
+
+.entryarea {
+  position: relative;
+  height: 5rem;
+  line-height: 5rem;
+  margin: 0 0 5rem 0;
+}
+
+.entryarea__input {
+  position: absolute;
+  width: 100%;
+  outline: none;
+  padding: 0 30px;
+  line-height: 5rem;
+  border-radius: 1rem;
+  border: 2px solid azure;
+  background: transparent;
+  transition: 0.1s ease;
+  z-index: 3;
+}
+
+.labelline {
+  position: absolute;
+  font-size: 2rem;
+  color: #ffffff;
+  padding: 0 25px;
+  margin: 0 20px;
+  background: #13161a;
+  transition: 0.2s ease;
+}
+
+.entryarea__input:focus,
+.entryarea__input:valid {
+  color: azure;
+}
+
+.entryarea__input:focus + .labelline {
+  color: azure;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 12px;
+  transform: translate(-15px, -16px) scale(0.88);
+  z-index: 4;
+}
+
+.popup {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  z-index: 5;
+  background: #13161a;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.popup_opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup-wrapper {
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.game-library {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.game-library__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @media (max-width: 1024px) {
   html {
     font-size: calc(100vw / 768 * 10);
   }
   .roulette {
     margin: 30rem 0 0 0;
+  }
+  .game-library {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    gap: 1.4rem;
+    width: 100%;
+    justify-content: center;
+    list-style-type: none;
+  }
+
+  .entryarea {
+    height: 3rem;
+    line-height: 3rem;
+    margin: 0 0 3rem 0;
+  }
+
+  .entryarea__input {
+    line-height: 3rem;
+  }
+
+  .labelline {
+    font-size: 1.6rem;
   }
 }
 
@@ -335,6 +467,24 @@ html {
 
   .roulette {
     margin: 20rem 0 0 0;
+  }
+
+  .entryarea {
+    height: 2rem;
+    line-height: 2rem;
+    margin: 0 0 3rem 0;
+  }
+
+  .entryarea__input {
+    line-height: 2rem;
+  }
+
+  .labelline {
+    font-size: 1.2rem;
+  }
+
+  .game-library {
+    gap: 1rem;
   }
 }
 
@@ -386,6 +536,13 @@ html {
 
   .list__chance-color {
     width: 19.7rem;
+  }
+
+  .game-library {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
   }
 }
 

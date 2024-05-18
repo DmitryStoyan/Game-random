@@ -21,6 +21,32 @@
       </div>
     </div>
 
+    <div class="popup game-selection">
+      <div class="popup-wrapper">
+        <div class="header-menu">
+          <button class="game-selection__close-button"></button>
+          <h3 class="game-selection__title">Выбор игр</h3>
+          <img
+            class="header-menu__logo"
+            src="<%= require('./images/random-icon_white.png') %>"
+            alt=""
+          />
+        </div>
+        <div class="entryarea">
+          <input class="entryarea__input" type="text" />
+          <div class="labelline">Поиск игры</div>
+        </div>
+
+        <div class="game-library">
+          <template id="place-template">
+            <article class="game-library__item">
+              <img class="game-library__img" src="" alt="" />
+            </article>
+          </template>
+        </div>
+      </div>
+    </div>
+
     <!-- <div class="install-screen">
       <img class="icon" src="<%=require('./images/random-icon.png')%>" alt="" />
 
@@ -64,6 +90,7 @@
       </div>
       <div class="buttons-wrapper">
         <button class="start-button">Крутить</button>
+        <button class="select-game-button">выбрать игру</button>
         <button class="swap-theme-button"></button>
       </div>
     </div>
