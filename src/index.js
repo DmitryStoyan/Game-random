@@ -14,6 +14,7 @@ import {
   gameSelectionCloseButton,
   preloader,
   gameLibrary,
+  selectedGames,
 } from "./constants";
 
 import left4Dead2Image from "@/images/game/left-4-dead-2.jpeg";
@@ -246,11 +247,14 @@ function createCard(card) {
   image.addEventListener("click", () => {
     overlay.classList.toggle("overlay_active");
     console.log("game select image click");
+    selectedGames.push(image.alt);
+    console.log(selectedGames);
   });
 
   overlay.addEventListener("click", () => {
     overlay.classList.toggle("overlay_active");
-    console.log("game select image click");
+    selectedGames.pop(image.alt);
+    console.log(selectedGames);
   });
 
   return newCard;

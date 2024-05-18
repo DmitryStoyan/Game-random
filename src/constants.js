@@ -13,3 +13,4 @@ export const gameSelectionCloseButton = document.querySelector(
 export const preloader = document.querySelector(".preloader");
 
 export const gameLibrary = document.querySelector(".game-library");
+export const selectedGames = [];
