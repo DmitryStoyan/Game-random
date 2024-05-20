@@ -51,66 +51,42 @@ const items = [
   {
     name: "left-4-dead-2",
     img: left4Dead2Image,
-    chance: 0.1,
-    color: "#ff0200",
   },
   {
     name: "cs1.6",
     img: cs16Image,
-    chance: 0.4,
-    color: "#ffcc01",
   },
   {
     name: "day-of-defeat",
     img: dayOfDefeatImage,
-    chance: 1,
-    color: "#ff03ff",
   },
   {
     name: "dayz",
     img: dayzImage,
-    chance: 1.1,
-    color: "#993367",
   },
   {
     name: "fortnite",
     img: fortniteImage,
-    chance: 2,
-    color: "#ff03ff",
   },
-  { name: "gta5", img: gta5Image, chance: 3, color: "#993367" },
+  { name: "gta5", img: gta5Image },
   {
     name: "phasmophobia",
     img: phasmophobiaImage,
-    chance: 13,
-    color: "#1800ff",
   },
   {
     name: "mudrunner",
     img: mudrunnerImage,
-    chance: 20,
-    color: "#9accff",
   },
   {
     name: "pubg",
     img: pubgImage,
-    chance: 24,
-    color: "#9accff",
   },
-  { name: "cs2", img: cs2Image, chance: 34, color: "#808080" },
+  { name: "cs2", img: cs2Image },
 ];
 
 function getItem() {
-  let item;
-  while (!item) {
-    const chance = Math.floor(Math.random() * 100000);
-    items.forEach((elm) => {
-      if (chance < elm.chance * 1000 && !item) {
-        item = elm;
-      }
-    });
-  }
-  return item;
+  const randomIndex = Math.floor(Math.random() * items.length);
+  return items[randomIndex];
 }
 
 let observer;
