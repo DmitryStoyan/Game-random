@@ -11,6 +11,6 @@ export const initialRouletteImg = {
   pubg: require("@/images/game/pubg.png"),
   cssource: require("@/images/game/cssource.png"),
   gta4: require("@/images/game/gta4.png"),
-  left4dead: require("@/images/game/left4dead.png"),
+  left4dead: require("@/images/game/gta4.png"),
   snowrunner: require("@/images/game/snowRunner.png"),
 };
