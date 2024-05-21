@@ -91,6 +91,10 @@ function generateItems() {
     list.append(li);
 
     observer.observe(li);
+
+    // if (selectedGames.includes(item.name)) {
+    //   li.querySelector(".list__item-image").classList.add("overlay_active");
+    // }
   }
 }
 
@@ -152,10 +156,25 @@ menuCloseButton.addEventListener("click", () => {
 
 selectGameButton.addEventListener("click", () => {
   openedPopup(gameSelectionPopup);
+  const cards = gameLibrary.querySelectorAll(".game-library__item");
+  cards.forEach((card) => {
+    const image = card.querySelector(".game-library__img");
+    const overlay = card.querySelector(".overlay");
+    if (selectedGames.includes(image.alt)) {
+      overlay.classList.add("overlay_active");
+    } else {
+      overlay.classList.remove("overlay_active");
+    }
+  });
 });
 
 gameSelectionCloseButton.addEventListener("click", () => {
   closedPopup(gameSelectionPopup);
+  const cards = gameLibrary.querySelectorAll(".game-library__item");
+  cards.forEach((card) => {
+    const overlay = card.querySelector(".overlay");
+    overlay.classList.remove("overlay_active");
+  });
 });
 
 // const downloadButton = document.querySelector(".download-button");
@@ -183,6 +202,10 @@ function createCard(card) {
   image.alt = card.name;
   image.src = card.imgLibrary;
 
+  if (selectedGames.includes(card.name)) {
+    overlay.classList.add("overlay_active");
+  }
+
   image.addEventListener("click", () => {
     overlay.classList.toggle("overlay_active");
     const gameIndex = selectedGames.indexOf(image.alt);
@@ -197,6 +220,7 @@ function createCard(card) {
 
   overlay.addEventListener("click", () => {
     overlay.classList.remove("overlay_active");
+
     const gameIndex = selectedGames.indexOf(image.alt);
     if (gameIndex !== -1) {
       selectedGames.splice(gameIndex, 1);
