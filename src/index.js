@@ -18,7 +18,6 @@ import {
 } from "./constants";
 
 import { initialRouletteImg } from "./initialRouletteImg";
-import { initialLibraryImg } from "./initialLibraryImg";
 
 export let isContentLoad = false;
 
