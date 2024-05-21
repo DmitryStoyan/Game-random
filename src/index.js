@@ -17,16 +17,8 @@ import {
   selectedGames,
 } from "./constants";
 
-import left4Dead2Image from "@/images/game/left-4-dead-2.jpeg";
-import cs16Image from "@/images/game/cs1.6.png";
-import dayOfDefeatImage from "@/images/game/day-of-defeat.png";
-import dayzImage from "@/images/game/dayz.png";
-import fortniteImage from "@/images/game/fortnite.jpeg";
-import gta5Image from "@/images/game/gta5.png";
-import phasmophobiaImage from "@/images/game/phasmophobia.png";
-import mudrunnerImage from "@/images/game/mudrunner.png";
-import pubgImage from "@/images/game/pubg.png";
-import cs2Image from "@/images/game/cs2.png";
+import { initialRouletteImg } from "./initialRouletteImg";
+import { initialLibraryImg } from "./initialLibraryImg";
 
 export let isContentLoad = false;
 
@@ -47,46 +39,17 @@ export let isContentLoad = false;
 
 const cells = 243;
 
-const items = [
-  {
-    name: "left-4-dead-2",
-    img: left4Dead2Image,
-  },
-  {
-    name: "cs1.6",
-    img: cs16Image,
-  },
-  {
-    name: "day-of-defeat",
-    img: dayOfDefeatImage,
-  },
-  {
-    name: "dayz",
-    img: dayzImage,
-  },
-  {
-    name: "fortnite",
-    img: fortniteImage,
-  },
-  { name: "gta5", img: gta5Image },
-  {
-    name: "phasmophobia",
-    img: phasmophobiaImage,
-  },
-  {
-    name: "mudrunner",
-    img: mudrunnerImage,
-  },
-  {
-    name: "pubg",
-    img: pubgImage,
-  },
-  { name: "cs2", img: cs2Image },
-];
-
 function getItem() {
-  const randomIndex = Math.floor(Math.random() * items.length);
-  return items[randomIndex];
+  if (selectedGames.length === 0) {
+    return { name: "secret", img: initialRouletteImg.secret };
+  }
+
+  const randomIndex = Math.floor(Math.random() * selectedGames.length);
+  const selectedGameName = selectedGames[randomIndex];
+  return {
+    name: selectedGameName,
+    img: initialRouletteImg[selectedGameName.toLowerCase()],
+  };
 }
 
 let observer;
@@ -118,12 +81,12 @@ function generateItems() {
     const li = document.createElement("li");
     const listChanceColor = document.createElement("div");
     listChanceColor.className = "list__chance-color";
-    listChanceColor.style.backgroundColor = item.color;
-    listChanceColor.style.boxShadow = `0px -4px 10px ${item.color}`;
+    // listChanceColor.style.backgroundColor = item.color;
+    // listChanceColor.style.boxShadow = `0px -4px 10px ${item.color}`;
 
     li.setAttribute("data-item", JSON.stringify(item));
     li.classList.add("list__item");
-    li.innerHTML = `<img class='list__item-image' src='${item.img}' alt=''>`;
+    li.innerHTML = `<img class='list__item-image' src='${item.img}' alt='${item.name}'>`;
     li.appendChild(listChanceColor);
     list.append(li);
 
@@ -218,20 +181,25 @@ function createCard(card) {
   const overlay = newCard.querySelector(".overlay");
 
   image.alt = card.name;
-  image.src = card.url;
+  image.src = card.imgLibrary;
 
   image.addEventListener("click", () => {
     overlay.classList.toggle("overlay_active");
-    console.log("game select image click");
-    selectedGames.push(image.alt);
+    const gameIndex = selectedGames.indexOf(image.alt);
+    if (gameIndex === -1) {
+      selectedGames.push(image.alt);
+    } else {
+      selectedGames.splice(gameIndex, 1);
+    }
     console.log(selectedGames);
+    generateItems();
   });
 
-  overlay.addEventListener("click", () => {
-    overlay.classList.toggle("overlay_active");
-    selectedGames.pop(image.alt);
-    console.log(selectedGames);
-  });
+  // overlay.addEventListener("click", () => {
+  //   overlay.classList.toggle("overlay_active");
+  //   selectedGames.splice(image.alt);
+  //   console.log(selectedGames);
+  // });
 
   return newCard;
 }

@@ -12,5 +12,7 @@ export const gameSelectionCloseButton = document.querySelector(
 );
 export const preloader = document.querySelector(".preloader");
 
+import { initialLibraryImg } from "./initialLibraryImg";
+
 export const gameLibrary = document.querySelector(".game-library");
 export const selectedGames = [];

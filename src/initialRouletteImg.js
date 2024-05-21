@@ -1,0 +1,16 @@
+export const initialRouletteImg = {
+  secret: require("@/images/secret.png"),
+  dayz: require("@/images/game/dayz.png"),
+  cs2: require("@/images/game/cs2.png"),
+  dayofdefeat: require("@/images/game/DODSource.png"),
+  fortnite: require("@/images/game/fortnite.jpeg"),
+  gta5: require("@/images/game/gta5.png"),
+  left4dead2: require("@/images/game/Left4dead2.jpg"),
+  mudrunner: require("@/images/game/mudrunner.png"),
+  phasmophobia: require("@/images/game/phasmophobia.png"),
+  pubg: require("@/images/game/pubg.png"),
+  cssource: require("@/images/game/cssource.png"),
+  gta4: require("@/images/game/gta4.png"),
+  left4dead: require("@/images/game/left4dead.png"),
+  snowrunner: require("@/images/game/snowRunner.png"),
+};

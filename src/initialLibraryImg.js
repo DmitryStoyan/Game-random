@@ -1,0 +1,15 @@
+export const initialLibraryImg = {
+  dayz: require("@/images/game-library/dayz.jpeg"),
+  cs2: require("@/images/game-library/cs2.jpeg"),
+  cssource: require("@/images/game-library/cssource.jpeg"),
+  dayofdefeat: require("@/images/game-library/DODSource.jpeg"),
+  fortnite: require("@/images/game-library/fortnite.jpeg"),
+  gta4: require("@/images/game-library/gta4.jpeg"),
+  gta5: require("@/images/game-library/gta5.jpeg"),
+  left4dead2: require("@/images/game-library/Left4dead2.jpg"),
+  left4dead: require("@/images/game-library/left4dead.jpeg"),
+  mudrunner: require("@/images/game-library/mudrunner.jpeg"),
+  phasmophobia: require("@/images/game-library/phasmophobia.jpeg"),
+  pubg: require("@/images/game-library/pubg.jpeg"),
+  snowrunner: require("@/images/game-library/snowRunner.jpeg"),
+};
