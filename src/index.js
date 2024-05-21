@@ -79,15 +79,11 @@ function generateItems() {
   for (let i = 0; i < cells; i++) {
     const item = getItem();
     const li = document.createElement("li");
-    const listChanceColor = document.createElement("div");
-    listChanceColor.className = "list__chance-color";
-    // listChanceColor.style.backgroundColor = item.color;
-    // listChanceColor.style.boxShadow = `0px -4px 10px ${item.color}`;
 
     li.setAttribute("data-item", JSON.stringify(item));
     li.classList.add("list__item");
     li.innerHTML = `<img class='list__item-image' src='${item.img}' alt='${item.name}'>`;
-    li.appendChild(listChanceColor);
+
     list.append(li);
 
     observer.observe(li);
@@ -207,6 +203,7 @@ function createCard(card) {
   }
 
   image.addEventListener("click", () => {
+    isStarted = false;
     overlay.classList.toggle("overlay_active");
     const gameIndex = selectedGames.indexOf(image.alt);
     if (gameIndex === -1) {
@@ -219,6 +216,7 @@ function createCard(card) {
   });
 
   overlay.addEventListener("click", () => {
+    isStarted = false;
     overlay.classList.remove("overlay_active");
 
     const gameIndex = selectedGames.indexOf(image.alt);
