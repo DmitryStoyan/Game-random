@@ -195,11 +195,15 @@ function createCard(card) {
     generateItems();
   });
 
-  // overlay.addEventListener("click", () => {
-  //   overlay.classList.toggle("overlay_active");
-  //   selectedGames.splice(image.alt);
-  //   console.log(selectedGames);
-  // });
+  overlay.addEventListener("click", () => {
+    overlay.classList.remove("overlay_active");
+    const gameIndex = selectedGames.indexOf(image.alt);
+    if (gameIndex !== -1) {
+      selectedGames.splice(gameIndex, 1);
+    }
+    console.log(selectedGames);
+    generateItems();
+  });
 
   return newCard;
 }
