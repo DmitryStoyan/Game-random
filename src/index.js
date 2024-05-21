@@ -45,7 +45,7 @@ function getItem() {
   }
 
   const randomIndex = Math.floor(Math.random() * selectedGames.length);
-  const selectedGameName = selectedGames[randomIndex];
+  const selectedGameName = selectedGames[randomIndex].replace(/\s+(\d)/g, "$1");
   return {
     name: selectedGameName,
     img: initialRouletteImg[selectedGameName.toLowerCase()],
@@ -87,10 +87,6 @@ function generateItems() {
     list.append(li);
 
     observer.observe(li);
-
-    // if (selectedGames.includes(item.name)) {
-    //   li.querySelector(".list__item-image").classList.add("overlay_active");
-    // }
   }
 }
 
