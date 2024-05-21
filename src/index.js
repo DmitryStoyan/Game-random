@@ -22,6 +22,7 @@ import { initialRouletteImg } from "./initialRouletteImg";
 export let isContentLoad = false;
 
 // export function closePreloader() {
+
 //   isContentLoad = true;
 //   preloader.remove();
 // }
