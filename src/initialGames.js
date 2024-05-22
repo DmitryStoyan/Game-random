@@ -15,7 +15,7 @@ const initialGames = [];
 const gameNames = Object.keys(initialLibraryImg);
 
 gameNames.forEach((name) => {
-  if (initialRouletteImg[name] && initialLibraryImg[name]) {
+  if (initialLibraryImg[name]) {
     initialGames.push({
       name: formatName(name),
       imgRoulette: initialRouletteImg[name],

@@ -315,16 +315,19 @@ img {
   justify-content: space-between;
   background-color: #13161a;
   padding: 2rem 1rem;
+  position: fixed;
+  width: 90%;
+  z-index: 5;
 }
 
 .game-selection__close-button {
-  background-image: url(@/images/back-button.png);
+  background-image: url(@/images/back-button_white.png);
   background-color: transparent;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   border: none;
   cursor: pointer;
 }
@@ -348,6 +351,8 @@ img {
   color: azure;
   font-size: 2rem;
   background: transparent;
+  margin: 10rem 0 0 0;
+  box-sizing: border-box;
 }
 
 .input-game-search::placeholder {
