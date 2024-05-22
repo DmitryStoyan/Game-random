@@ -15,6 +15,7 @@ import {
   preloader,
   gameLibrary,
   selectedGames,
+  gameSearchInput,
 } from "./constants";
 
 import { initialRouletteImg } from "./initialRouletteImg";
@@ -182,9 +183,10 @@ gameSelectionCloseButton.addEventListener("click", () => {
 //   defaultInstallEvent.prompt();
 // });
 
+let contentItemTemplate;
+
 function createCard(card) {
-  const contentItemTemplate =
-    gameLibrary.querySelector("#place-template").content;
+  contentItemTemplate = gameLibrary.querySelector("#place-template").content;
   const newCard = contentItemTemplate
     .querySelector(".game-library__item")
     .cloneNode(true);
@@ -225,6 +227,21 @@ function createCard(card) {
 
   return newCard;
 }
+
+gameSearchInput.addEventListener("input", () => {
+  const gameSearchValue = gameSearchInput.value.trim().toLowerCase();
+
+  // Удаляем все текущие игры из отображаемого списка, но сохраняем шаблон
+  const template = document.querySelector("#place-template").outerHTML;
+  gameLibrary.innerHTML = template;
+
+  // Фильтруем игры на основе введенного значения
+  initialGames
+    .filter((game) => game.name.toLowerCase().includes(gameSearchValue))
+    .forEach((filteredGame) => {
+      gameLibrary.prepend(createCard(filteredGame));
+    });
+});
 
 initialGames.forEach((card) => {
   gameLibrary.prepend(createCard(card));
