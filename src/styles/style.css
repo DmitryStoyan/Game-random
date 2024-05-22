@@ -341,6 +341,12 @@ img {
   height: 4rem;
 }
 
+.search__wrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+
 .input-game-search {
   width: 100%;
   outline: none;
@@ -361,6 +367,18 @@ img {
 
 .input-game-search:focus::placeholder {
   opacity: 0;
+}
+
+.game-sorting__select {
+  border: none;
+  /* appearance: none; */
+  padding: 0 3rem 0 1.5rem;
+  /* width: 100%; */
+  color: white;
+  background-color: #67aeff;
+  font-size: 2rem;
+  margin: 10rem 0 0 0;
+  border-radius: 10px;
 }
 
 .popup {
@@ -437,6 +455,10 @@ img {
   .roulette {
     margin: 30rem 0 0 0;
   }
+
+  .input-game-search {
+    line-height: 4rem;
+  }
   .game-library {
     display: grid;
     grid-template-columns: repeat(3, minmax(100px, 1fr));
@@ -444,6 +466,14 @@ img {
     width: 100%;
     justify-content: center;
     list-style-type: none;
+  }
+
+  .search__wrapper {
+    grid-template-columns: 4fr 1fr;
+  }
+
+  .game-sorting__select {
+    font-size: 1rem;
   }
 }
 
@@ -458,6 +488,12 @@ img {
 
   .roulette {
     margin: 20rem 0 0 0;
+  }
+
+  .input-game-search {
+    line-height: 3rem;
+    font-size: 1.4rem;
+    padding: 0 20px;
   }
 
   .game-library {
@@ -513,6 +549,22 @@ img {
 
   .list__chance-color {
     width: 19.7rem;
+  }
+
+  .input-game-search {
+    line-height: 4rem;
+    font-size: 1.4rem;
+    padding: 0 20px;
+  }
+
+  .search__wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .game-sorting__select {
+    height: 4rem;
+    font-size: 2rem;
+    margin: 0;
   }
 
   .game-library {

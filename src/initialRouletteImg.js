@@ -49,6 +49,7 @@ const narakabladepoint = require('@/images/game/narakaBladepoint.png');
 const phasmophobia = require('@/images/game/phasmophobia.png');
 const pubg = require('@/images/game/pubg.png');
 const rust = require('@/images/game/rust.png');
+const secret = require('@/images/game/secret.png');
 const snowrunner = require('@/images/game/snowRunner.png');
 const stardewvalley = require('@/images/game/stardewValley.png');
 const teamfortes2 = require('@/images/game/teamFortes2.png');
@@ -111,6 +112,7 @@ export const initialRouletteImg = {
   phasmophobia,
   pubg,
   rust,
+  secret,
   snowrunner,
   stardewvalley,
   teamfortes2,

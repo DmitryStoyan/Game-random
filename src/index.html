@@ -32,7 +32,30 @@
             alt=""
           />
         </div>
-        <input class="input-game-search" type="text" placeholder="Найти игру" />
+        <div class="search__wrapper">
+          <input
+            class="input-game-search"
+            type="text"
+            placeholder="Найти игру"
+          />
+          <select class="game-sorting__select" name="game-sorting">
+            <option
+              class="game-sorting__item"
+              value=""
+              disabled
+              selected
+              hidden
+            >
+              Сортировать по
+            </option>
+            <option class="game-sorting__item" value="selected-game">
+              Выбранные
+            </option>
+            <option class="game-sorting__item" value="by-name">
+              По названию
+            </option>
+          </select>
+        </div>
 
         <div class="game-library">
           <template id="place-template">
