@@ -4,6 +4,7 @@
   "description": "[**Random Game**](https://game-random-lovat.vercel.app/) — это прогрессивное веб-приложение, созданное для тех, кто испытывает трудности с выбором игры из своей обширной коллекции. Это приложение в стиле рулетки добавляет элемент неожиданности и справедливости в процесс выбора игры, делая его веселым и легким.",
   "main": "index.js",
   "scripts": {
+    "prebuild": "node generateImageExports.js",
     "build": "webpack",
     "start": "webpack serve"
   },
