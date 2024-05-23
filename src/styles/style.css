@@ -384,12 +384,15 @@ img {
 .popup {
   width: 100%;
   min-height: 100vh;
+  height: 100vh;
   position: absolute;
   z-index: 5;
   background: #13161a;
   visibility: hidden;
+  overflow: hidden;
   opacity: 0;
   transition: opacity 0.5s ease;
+  overflow-y: auto;
 }
 
 .popup_opened {
@@ -519,6 +522,10 @@ img {
 
   .list__chance-color {
     width: 29.7rem;
+  }
+
+  .game-sorting__select {
+    padding: 0 1rem;
   }
 }
 
