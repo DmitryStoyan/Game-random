@@ -5,9 +5,13 @@
   "display": "fullscreen",
   "icons": [
     {
-      "src": "./images/random-icon.png",
+      "src": "images/random-icon.01e33c809eb8e85353c6.png",
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "short_name": "Random Game",
+  "description": "Помощь с выбором игры"
 }
