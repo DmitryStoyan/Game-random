@@ -15,17 +15,17 @@
     <title>Random Game</title>
   </head>
   <body class="body">
-    <div class="preloader">
+    <!-- <div class="preloader">
       <div class="loader">
         <div class="tile"></div>
       </div>
-    </div>
+    </div> -->
 
     <div class="popup game-selection">
       <div class="popup-wrapper">
         <div class="header-menu">
           <button class="game-selection__close-button"></button>
-          <h3 class="game-selection__title">Выбор игр</h3>
+          <h3 class="game-selection__title">Библиотека игр</h3>
           <img
             class="header-menu__logo"
             src="<%= require('./images/random-icon_white.png') %>"
@@ -104,9 +104,18 @@
     <div class="page">
       <header class="header">
         <a class="header__logo" href="#"> Random Game </a>
-        <!-- <div class="header__logo"></div> -->
         <button class="burger-menu__button"></button>
       </header>
+      <div class="warning">
+        <div class="warning__wrapper">
+          <img
+            class="warning__img"
+            src="<%=require('./images/warning.png')%>"
+            alt="!"
+          />
+          <p class="warning__text">Выберите хотя бы 2 игры</p>
+        </div>
+      </div>
       <div class="roulette">
         <div class="pointer"></div>
         <div class="app">
@@ -117,7 +126,7 @@
       </div>
       <div class="buttons-wrapper">
         <button class="start-button">Крутить</button>
-        <button class="select-game-button">выбрать игру</button>
+        <button class="select-game-button">Библиотека игр</button>
         <button class="swap-theme-button"></button>
       </div>
     </div>

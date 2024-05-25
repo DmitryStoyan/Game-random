@@ -60,7 +60,7 @@ img {
 
 .roulette {
   position: relative;
-  margin: 40rem 0 0 0;
+  margin: 25rem 0 0 0;
 }
 
 .app {
@@ -147,6 +147,14 @@ img {
 
 .start-button:hover {
   opacity: 0.8;
+}
+
+.start-button_disabled {
+  opacity: 0.3;
+}
+
+.start-button:hover.start-button_disabled {
+  opacity: 0.3;
 }
 
 .menu {
@@ -395,11 +403,6 @@ img {
   overflow-y: auto;
 }
 
-.popup_opened {
-  visibility: visible;
-  opacity: 1;
-}
-
 .popup-wrapper {
   margin: 0 auto;
   max-width: 90%;
@@ -447,6 +450,36 @@ img {
 }
 
 .overlay_active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.warning {
+  width: max-content;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.warning__wrapper {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.warning__img {
+  width: 3rem;
+}
+
+.warning__text {
+  font-size: 2rem;
+  padding: 0 0 0 1rem;
+  color: #f2f2f2;
+}
+
+.popup_opened {
   opacity: 1;
   visibility: visible;
 }

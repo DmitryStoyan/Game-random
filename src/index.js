@@ -16,26 +16,28 @@ import {
   gameLibrary,
   selectedGames,
   gameSearchInput,
+  gameSortingSelect,
+  warning,
 } from "./constants";
 
 export let isContentLoad = false;
 
 const cells = 243;
 
-export function closePreloader() {
-  isContentLoad = true;
-  preloader.remove();
-}
+// export function closePreloader() {
+//   isContentLoad = true;
+//   preloader.remove();
+// }
 
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    if (isContentLoad) {
-      closePreloader();
-    } else {
-      setTimeout(closePreloader, 500);
-    }
-  }, 500);
-});
+// window.addEventListener("load", () => {
+//   setTimeout(() => {
+//     if (isContentLoad) {
+//       closePreloader();
+//     } else {
+//       setTimeout(closePreloader, 500);
+//     }
+//   }, 500);
+// });
 
 function getItem() {
   if (selectedGames.length === 0) {
@@ -88,10 +90,29 @@ function generateItems() {
   }
 }
 
+function checkSelectedGames() {
+  if (selectedGames.length <= 1) {
+    startButton.classList.add("start-button_disabled");
+  } else {
+    startButton.classList.remove("start-button_disabled");
+  }
+}
+
 let isStarted = false;
 
 function start() {
   if (isStarted) return;
+
+  checkSelectedGames();
+
+  if (selectedGames.length <= 1) {
+    warning.classList.add("popup_opened");
+    setTimeout(() => {
+      warning.classList.remove("popup_opened");
+    }, 4000);
+    return;
+  }
+
   isStarted = true;
   generateItems();
   const list = document.querySelector(".list");
@@ -117,7 +138,9 @@ function start() {
   });
 }
 
-startButton.addEventListener("click", start);
+startButton.addEventListener("click", () => {
+  start();
+});
 
 swapThemeButton.addEventListener("click", () => {
   const pointer = document.querySelector(".pointer");
@@ -195,6 +218,7 @@ function createCard(card) {
     }
     console.log(selectedGames);
     generateItems();
+    checkSelectedGames();
   });
 
   overlay.addEventListener("click", () => {
@@ -207,24 +231,51 @@ function createCard(card) {
     }
     console.log(selectedGames);
     generateItems();
+    checkSelectedGames();
   });
 
   return newCard;
 }
 
-gameSearchInput.addEventListener("input", () => {
-  const gameSearchValue = gameSearchInput.value.trim().toLowerCase();
-
-  // Удаляем все текущие игры из отображаемого списка, но сохраняем шаблон
+const collator = new Intl.Collator(["ru", "en"], { sensitivity: "base" });
+// Функция для отображения игр в библиотеке
+function displayGames(games) {
   const template = document.querySelector("#place-template").outerHTML;
   gameLibrary.innerHTML = template;
 
-  // Фильтруем игры на основе введенного значения
-  initialGames
-    .filter((game) => game.name.toLowerCase().includes(gameSearchValue))
-    .forEach((filteredGame) => {
-      gameLibrary.prepend(createCard(filteredGame));
-    });
+  games.forEach((game) => {
+    gameLibrary.append(createCard(game));
+  });
+}
+
+gameSortingSelect.addEventListener("change", (event) => {
+  const sortValue = event.target.value;
+
+  if (sortValue === "selected-game") {
+    const selectedGameList = initialGames.filter((game) =>
+      selectedGames.includes(game.name)
+    );
+    displayGames(selectedGameList);
+  } else if (sortValue === "by-name") {
+    const sortedGames = [...initialGames].sort((a, b) =>
+      collator.compare(a.name, b.name)
+    );
+    displayGames(sortedGames);
+  } else {
+    displayGames(initialGames);
+  }
+});
+
+displayGames(initialGames);
+checkSelectedGames();
+
+gameSearchInput.addEventListener("input", () => {
+  const gameSearchValue = gameSearchInput.value.trim().toLowerCase();
+
+  const filteredGames = initialGames.filter((game) =>
+    game.name.toLowerCase().includes(gameSearchValue)
+  );
+  displayGames(filteredGames);
 });
 
 initialGames.forEach((card) => {
