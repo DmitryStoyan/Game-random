@@ -18,9 +18,99 @@ import {
   gameSearchInput,
   gameSortingSelect,
   warning,
+  startRecordingButton,
+  stopRecordingButton,
 } from "./constants";
 
 export let isContentLoad = false;
+let recognition;
+let isRecognizing = false;
+
+// if (
+//   !("webkitSpeechRecognition" in window) &&
+//   !("SpeechRecognition" in window)
+// ) {
+//   alert("Ваш браузер не поддерживает API распознавания речи.");
+//   return;
+// }
+
+const SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+recognition = new SpeechRecognition();
+recognition.lang = "ru-RU";
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+recognition.continuous = true;
+
+recognition.onresult = (event) => {
+  const transcript = event.results[event.results.length - 1][0].transcript
+    .trim()
+    .toLowerCase();
+  handleVoiceCommand(transcript);
+};
+
+recognition.onerror = (event) => {
+  console.error("Ошибка распознавания речи: ", event.error);
+  if (event.error === "no-speech" || event.error === "audio-capture") {
+    stopRecognition();
+  }
+};
+
+recognition.onend = () => {
+  if (isRecognizing) {
+    recognition.start();
+  }
+};
+
+function startRecognition() {
+  recognition.start();
+  isRecognizing = true;
+  startRecordingButton.disabled = true;
+  stopRecordingButton.disabled = false;
+}
+
+function stopRecognition() {
+  recognition.stop();
+  isRecognizing = false;
+  startRecordingButton.disabled = false;
+  stopRecordingButton.disabled = true;
+}
+
+startRecordingButton.addEventListener("click", startRecognition);
+stopRecordingButton.addEventListener("click", stopRecognition);
+
+function handleVoiceCommand(command) {
+  if (command.includes("рулетка крутись")) {
+    start();
+    console.log("Ты сказал крутить");
+  } else if (command.includes("рулетка открой библиотеку")) {
+    openedPopup(gameSelectionPopup);
+    console.log("Ты сказал открой библиотеку");
+  } else if (command.includes("рулетка закрой библиотеку")) {
+    closedPopup(gameSelectionPopup);
+    console.log("Ты сказал закрой библиотеку");
+  } else if (command.startsWith("рулетка выбери игру")) {
+    const gameName = command.replace("рулетка выбери игру", "").trim();
+    selectGameByName(gameName);
+    console.log(`Ты сказал выбери игру: ${gameName}`);
+  }
+}
+
+function selectGameByName(gameName) {
+  const gameCards = document.querySelectorAll(".game-library__item");
+  gameCards.forEach((card) => {
+    const image = card.querySelector(".game-library__img");
+    if (image.alt.toLowerCase() === gameName.toLowerCase()) {
+      const overlay = card.querySelector(".overlay");
+      overlay.classList.add("overlay_active");
+      if (!selectedGames.includes(image.alt)) {
+        selectedGames.push(image.alt);
+      }
+    }
+  });
+  generateItems();
+  checkSelectedGames();
+}
 
 const cells = 243;
 
