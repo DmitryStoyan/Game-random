@@ -117,13 +117,6 @@ img {
   transition: 0.3s ease;
 }
 
-.list__chance-color {
-  position: absolute;
-  bottom: 0;
-  width: 19.7rem;
-  height: 0.5rem;
-}
-
 .active {
   opacity: 1;
 }
@@ -308,6 +301,7 @@ img {
   padding: 2rem 1rem;
   position: fixed;
   width: 90%;
+  max-width: 120rem;
   z-index: 5;
 }
 
@@ -324,6 +318,7 @@ img {
 }
 
 .game-selection__title {
+  color: #f2f2f2;
   font-size: 3rem;
 }
 
@@ -386,7 +381,8 @@ img {
 
 .popup-wrapper {
   margin: 0 auto;
-  max-width: 90%;
+  width: 90%;
+  max-width: 120rem;
 }
 
 .game-library__item {
@@ -487,6 +483,11 @@ img {
   }
   .roulette {
     margin: 12rem 0 0 0;
+  }
+
+  .pointer {
+    width: 3rem;
+    height: 3rem;
   }
 
   .list__item {
@@ -617,8 +618,8 @@ img {
     padding: 1rem 2rem;
   }
 
-  .list__chance-color {
-    width: 29.7rem;
+  .list__item {
+    width: 20rem;
   }
 
   .game-sorting__select {
@@ -653,10 +654,6 @@ img {
 
   .list__item {
     width: 20rem;
-  }
-
-  .list__chance-color {
-    width: 19.7rem;
   }
 
   .input-game-search {
