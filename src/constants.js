@@ -9,12 +9,8 @@ export const burgerButton = document.querySelector(".burger-menu__button");
 export const menuCloseButton = document.querySelector(".menu__close-button");
 export const gameSearchInput = document.querySelector(".input-game-search");
 export const warning = document.querySelector(".warning");
-export const startRecordingButton = document.querySelector(
-  ".start-recording_button"
-);
-export const stopRecordingButton = document.querySelector(
-  ".stop-recording_button"
-);
+export const headerLogo = document.querySelector(".header__logo");
+export const pointer = document.querySelector(".pointer");
 export const gameSelectionCloseButton = document.querySelector(
   ".game-selection__close-button"
 );

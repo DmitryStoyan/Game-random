@@ -9,17 +9,18 @@
     <link
       rel="icon"
       href="<%= require('./images/random-icon.png') %>"
-      type="image/x-icon"
+      type="image/png"
     />
+
     <link rel="manifest" href="<%= require('./manifest.webmanifest') %>" />
     <title>Random Game</title>
   </head>
   <body class="body">
-    <!-- <div class="preloader">
+    <div class="preloader">
       <div class="loader">
         <div class="tile"></div>
       </div>
-    </div> -->
+    </div>
 
     <div class="popup game-selection">
       <div class="popup-wrapper">
@@ -74,15 +75,6 @@
       </div>
     </div>
 
-    <!-- <div class="install-screen">
-      <img class="icon" src="<%=require('./images/random-icon.png')%>" alt="" />
-
-      <p class="subtitle">Random Game</p>
-      <div class="wrapper">
-        <button class="download-button">Скачать игру на телефон</button>
-      </div>
-    </div> -->
-
     <div class="menu">
       <div class="menu__content">
         <div class="install-screen">
@@ -127,12 +119,6 @@
       <div class="buttons-wrapper">
         <button class="start-button">Крутить</button>
         <button class="select-game-button">Библиотека игр</button>
-        <button class="start-recording_button">
-          Включить голосовое управление
-        </button>
-        <button class="stop-recording_button">
-          Выключить голосовое управление
-        </button>
         <button class="swap-theme-button"></button>
       </div>
     </div>

@@ -61,6 +61,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html"),
+      favicon: path.resolve(__dirname, "src", "images", "random-icon.png"),
       files: {
         manifest: "./manifest.webmanifest",
       },
@@ -74,6 +75,10 @@ module.exports = {
         {
           from: path.resolve(__dirname, "src", "manifest.webmanifest"),
           to: path.resolve(__dirname, "build", ""),
+        },
+        {
+          from: path.resolve(__dirname, "src", "images", "random-icon.png"),
+          to: path.resolve(__dirname, "build", "images"),
         },
       ],
     }),

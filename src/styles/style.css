@@ -2,10 +2,18 @@
   box-sizing: border-box;
   height: 100%;
   -webkit-font-smoothing: antialiased;
-  /* background-color: var(--color-root, hsl(0deg, 0%, 0%)); */
-  /* background-color: #13161a; */
   color: var(--color-text, hsl(210deg, 15%, 96%));
-  /* background-image: radial-gradient(#222, rgba(255, 255, 255, 0)); */
+  --backgroung-color: #13161a;
+  --text-color: #fff;
+  --header-logo-color: #fff;
+  --button-background-color: #67aeff;
+}
+
+.light-theme {
+  --backgroung-color: whitesmoke;
+  --text-color: #000000;
+  --header-logo-color: #13161a;
+  --button-background-color: #000000;
 }
 
 * {
@@ -20,8 +28,8 @@ html {
 }
 
 .body {
-  background: #13161a;
-  color: white;
+  background-color: var(--backgroung-color);
+  color: var(--text-color);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   transition: background 0.6s ease;
   -webkit-user-select: none;
@@ -54,7 +62,7 @@ img {
   font-family: "DancingScript-Regular", serif;
   font-size: 2rem;
   font-weight: 900;
-  color: aliceblue;
+  color: var(--header-logo-color);
   text-decoration: none;
 }
 
@@ -135,7 +143,7 @@ img {
 
 .start-button {
   padding: 1rem 3rem;
-  background: #67aeff;
+  background: var(--button-background-color);
   color: white;
   font-size: 1.6rem;
   border: none;
@@ -234,40 +242,15 @@ img {
   cursor: pointer;
 }
 
-.block-button {
-  opacity: 0;
-  position: absolute;
-  margin: 10% 0 0;
-  padding: 1.5rem 3rem;
-  color: aliceblue;
-  font-size: 2.1rem;
-  left: 50%;
-  top: 100%;
-  transform: translate3d(-50%, 50px, 0);
-  background: red;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: opacity 3s ease;
+.burger-menu__button_theme-light {
+  background: url(../images/random-icon.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .button-active {
   opacity: 1;
-}
-
-.body__theme_light {
-  transition: background 0.6s ease;
-  background: whitesmoke;
-}
-
-.app__theme_light {
-  background: #777778;
-  opacity: 1;
-}
-
-.start-button__theme_light {
-  border: none;
-  background: black;
-  color: white;
 }
 
 .swap-theme-button {
@@ -379,9 +362,7 @@ img {
 
 .game-sorting__select {
   border: none;
-  /* appearance: none; */
   padding: 0 3rem 0 1.5rem;
-  /* width: 100%; */
   color: white;
   background-color: #67aeff;
   font-size: 2rem;
@@ -479,6 +460,22 @@ img {
   color: #f2f2f2;
 }
 
+.select-game-button {
+  padding: 1rem 3rem;
+  background: var(--button-background-color);
+  color: white;
+  font-size: 1.6rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.select-game-button:hover {
+  opacity: 0.8;
+}
+
 .popup_opened {
   opacity: 1;
   visibility: visible;
@@ -549,6 +546,9 @@ img {
     padding: 1.5rem 4rem;
   }
 
+  .select-game-button {
+    padding: 1.5rem 4rem;
+  }
   .list__item {
     width: 30rem;
   }
@@ -574,6 +574,10 @@ img {
   }
 
   .start-button {
+    font-size: 2rem;
+  }
+
+  .select-game-button {
     font-size: 2rem;
   }
 }
