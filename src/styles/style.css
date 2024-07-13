@@ -486,7 +486,31 @@ img {
     font-size: calc(100vw / 768 * 10);
   }
   .roulette {
-    margin: 30rem 0 0 0;
+    margin: 12rem 0 0 0;
+  }
+
+  .list__item {
+    width: 12rem;
+  }
+
+  .buttons-wrapper {
+    margin: 6rem 0 0 0;
+    gap: 6rem;
+  }
+
+  .start-button {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .select-game-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .swap-theme-button {
+    padding: 1.3rem;
+    background-size: cover;
   }
 
   .input-game-search {
@@ -519,8 +543,40 @@ img {
     max-width: 95%;
   }
 
+  .header {
+    padding: 2rem 0 0 0;
+  }
+
+  .header__logo {
+    font-size: 1.4rem;
+  }
+
+  .burger-menu__button {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
   .roulette {
-    margin: 20rem 0 0 0;
+    margin: 13rem 0 0 0;
+  }
+
+  .pointer {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .buttons-wrapper {
+    margin: 6rem 0 0 0;
+    gap: 5rem;
+  }
+
+  .start-button {
+    font-size: 1.1rem;
+  }
+
+  .select-game-button {
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
   }
 
   .input-game-search {
@@ -534,23 +590,31 @@ img {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   html {
     font-size: calc(100vw / 500 * 10);
   }
 
   .roulette {
-    margin: 30rem 0 0 0;
+    margin: 20rem 0 0 0;
   }
+
+  .pointer {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .buttons-wrapper {
+    margin: 8rem 0 0 0;
+    gap: 8rem;
+  }
+
   .start-button {
-    padding: 1.5rem 4rem;
+    padding: 1rem 2.5rem;
   }
 
   .select-game-button {
-    padding: 1.5rem 4rem;
-  }
-  .list__item {
-    width: 30rem;
+    padding: 1rem 2rem;
   }
 
   .list__chance-color {
