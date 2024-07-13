@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
 
 function getItem() {
   if (selectedGames.length === 0) {
-    return { name: "secret", img: initialRouletteImg.secret };
+    return { name: "question", img: initialRouletteImg.question };
   }
 
   const randomIndex = Math.floor(Math.random() * selectedGames.length);
